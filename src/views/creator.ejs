@@ -1,0 +1,79 @@
+<%- include('./partials/header') %>
+<link rel="stylesheet" href="/style.css" />
+<link rel="stylesheet" href="/header.css" />
+<style>
+    main.creator {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main.creator img {
+        margin: 1rem;
+        max-width: 240px;
+        height: auto;
+        border-radius: 100%;
+        border: 8px solid #46957a;
+    }
+
+    main.creator div {
+        text-align: left;
+        margin-left: 4rem !important;
+
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    main.creator div h1 {
+        font-size: 2.4rem;
+    }
+    main.creator div p {
+        max-width: 600px;
+    }
+
+    .emphasis {
+        color: #8ec78e;
+        font-weight: 900;
+    }
+    .emphasis.a2 {
+        color: #8ec78e;
+        font-weight: 700;
+    }
+    .details.a1 {
+        color: #46957a;
+        font-weight: 700;
+    }
+
+    @media screen and (max-width: 800px) {
+        main.creator {
+            flex-direction: column;
+        }
+
+        main.creator div {
+            text-align: center;
+            align-items: center !important;
+            margin: 2rem 1rem 0 1rem !important;
+        }
+        main.creator div h1 {
+            align-items: center !important;
+            text-align: center !important;
+        }
+    }
+</style>
+<%- include('./partials/closeheader') %> <%- include('./partials/navbar') %>
+<main class="creator">
+    <img src="/assets/icon.jpg" alt="icon" />
+    <div>
+        <h1 class="emphasis">Henri Lima</h1>
+        <p>
+            Olá! Me chamo <span class="details a1">Henri</span>, e sou estudante
+            de <span class="emphasis a2">Desenvolvimento de Sistemas</span>.
+            Adoro aprender novas tecnologias e habilidades da web.
+        </p>
+    </div>
+</main>
+
+<%- include('./partials/footer') %>

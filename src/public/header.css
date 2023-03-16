@@ -1,0 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@font-face {
+    font-family: "Uni Sans";
+    src: url("/fonts/Uni Sans Heavy.otf");
+}
+
+:root {
+    --primary: #92c990;
+    --black: #101010;
+    --warn: #d97c0f;
+    --blue: #b1c4f6;
+    --white: #d9d9d9;
+    --glass: linear-gradient(
+        45deg,
+        rgba(217, 217, 217, 0.05),
+        rgba(217, 217, 217, 0.25),
+        rgba(217, 217, 217, 0.05)
+    );
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    transition: all 0.4s;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 100%;
+    font-weight: 500 !important;
+    background-color: #f2f2f2;
+}
+
+body,
+main {
+    overflow-x: hidden;
+}

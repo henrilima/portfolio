@@ -1,0 +1,161 @@
+@import url(./header.css);
+
+main {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+    background-color: #1c1b29;
+}
+
+main > h2 {
+    font-size: 2.2rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    font-family: "Uni Sans", sans-serif;
+    color: #d9d9d9;
+}
+
+.carousel-container {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    margin: 0 1rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.carousel-slide {
+    display: flex;
+    width: calc(100% * 5);
+}
+
+.carousel-slide a {
+    text-decoration: none;
+}
+
+.carousel-item {
+    width: 320px;
+    height: 260px;
+    margin-right: 20px;
+    text-align: center;
+    background-color: #292841;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#prevBtn,
+#nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    font-size: 60px;
+    background-color: #46957a;
+    color: #d9d9d9;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 40px;
+}
+
+.image {
+    width: 100%;
+    height: calc(100% - 45px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image img {
+    max-height: 50%;
+    height: auto;
+    width: auto;
+}
+
+.carousel-item .nav-el {
+    background-color: #57567b;
+    border-radius: 5px;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.carousel-item .nav-el > p {
+    font-size: 1.2rem;
+    color: #d9d9d9;
+    font-weight: 700 !important;
+}
+
+.action-center {
+    width: 100%;
+    margin: 1rem 0 0 2rem;
+    
+    display: flex;
+    justify-content: flex-start;
+}
+
+.action-center div {
+    margin-left: 2rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.action-center img {
+    border-radius: 200px;
+    width: 80px;
+    height: 80px;
+    border: #292841 4px solid;
+}
+
+.action-center div h2 {
+    margin-bottom: 0.5rem;
+    color: #d9d9d9;
+}
+
+.action-center div a.logout, .action-center div a.whatsapp {
+    border-radius: 100px;
+    color: #d9d9d9;
+    font-weight: 800;
+    text-decoration: none;
+    padding: 0.4rem 1rem;
+    margin-bottom: 12px;
+}
+
+.action-center div a.logout {
+    background-color: #fc6565;
+}
+.action-center div a.whatsapp {
+    background-color: #46957a;
+}
+
+@media screen and (max-width: 800px) {
+    .action-center {
+        margin: 1rem 0;
+        justify-content: space-evenly;
+    }
+}

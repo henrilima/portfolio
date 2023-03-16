@@ -1,0 +1,113 @@
+<%- include('./partials/header') %>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Red+Hat+Display:300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        font-family: "Red Hat Display", sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        width: 100%;
+        overflow-x: hidden;
+        background-color: #1c1b29;
+
+        display: -webkit-box;
+
+        display: -ms-flexbox;
+
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    div.loader {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    div.spinner {
+        width: 80px;
+        height: 80px;
+        background-color: #46957A;
+        border-radius: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: pulse 1s infinite ease-in-out;
+    }
+    
+    div.spinner.sp2 {
+        width: 40px;
+        height: 40px;
+        background-color: #92C990;
+        animation: pulse 1s infinite ease-in-out;
+    }
+
+    .loader p {
+        font-weight: 800;
+        font-size: 1.4rem;
+        color: #d9d9d9;
+        margin-top: 2rem;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(0.8);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(0.8);
+        }
+    }
+</style>
+<%- include('./partials/closeheader') %>
+
+<div class="loader">
+    <div class="spinner">
+        <div class="spinner sp2"></div>
+    </div>
+    <p id="text">Carregando</p>
+</div>
+
+<script>
+    setInterval(() => {
+        document.getElementById("text").innerHTML += ".";
+        if (document.getElementById("text").innerHTML.length >= 14) {
+            document.getElementById("text").innerHTML = "Carregando";
+        }
+    }, 1000);
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    // Espera 4 segundos
+    setTimeout(function() {
+        window.location.href = "/dashboard/<%- rota %>";
+    }, 4000);
+  </script>
+
+<%- include('./partials/footer') %>

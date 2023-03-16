@@ -1,0 +1,141 @@
+<%- include('./partials/header') %>
+<link rel="stylesheet" href="/chat.css" />
+<%- include('./partials/closeheader') %>
+
+<nav>
+    <h3>#bate-papo | Comunidade da Chromac</h3>
+</nav>
+<main>
+    <div class="messages">
+        <div class="message-boxies">
+            <ul id="list-message"></ul>
+        </div>
+        <section>
+            <input
+                type="text"
+                class="box"
+                placeholder="Mensagem em #bate-papo"
+                id="input-textbox"
+            />
+            <a class="send-button" onclick="sendMessage();">📬</a>
+        </section>
+    </div>
+    <div class="users">
+        <div class="classe p1">
+            <p>Criador - 1</p>
+            <div class="user">
+                <img
+                    src="https://lh3.googleusercontent.com/a/AGNmyxZaJUalSGFT05d2p9n3vjFRkliOujQ6cHqxaSETUQ=s96-c"
+                />
+                <p>Henrilima</p>
+            </div>
+        </div>
+        <div class="classe" id="list-users">
+            <p>Everyone</p>
+        </div>
+    </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.9.1/firebase.js"></script>
+<script src="chat.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyD0hZhQgsUDDkZAW8_mmWLSvMz2STf4EZA",
+        authDomain: "chromac-16882.firebaseapp.com",
+        projectId: "chromac-16882",
+        storageBucket: "chromac-16882.appspot.com",
+        messagingSenderId: "1053560605084",
+        appId: "1:1053560605084:web:16156b2fdc24e370d22059",
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    function eraseText() {
+        document.getElementsByClassName("output")[0].value = "";
+    }
+
+    function scrollToBot() {
+        var element = document.getElementById("list-message");
+        element.scrollTop = element.scrollHeight;
+    }
+
+    function sendMessage() {
+        if (document.getElementById("input-textbox").value === "") {
+            scrollToBot();
+            document.getElementsByClassName("send-button")[0].style =
+                "background-color: #d97c0f;";
+            setTimeout(
+                () =>
+                    (document.getElementsByClassName("send-button")[0].style =
+                        "background-color: #57567b;"),
+                500
+            );
+        } else {
+            let Message = document.getElementById("input-textbox").value
+                ? document.getElementById("input-textbox").value
+                : false;
+
+            firebase.database().ref("messages").push().set({
+                sender: "<%- user.username %>",
+                message: Message,
+                avatar: "<%- user.avatar %>",
+                tag: "<%- user.tag %>",
+            });
+
+            document.getElementById("input-textbox").value = "";
+
+            firebase
+                .database()
+                .ref("users")
+                .child(`${"<%- (user.tag) %>".replace("#", "-")}`)
+                .set({
+                    username: "<%- (user.username) %>",
+                    tag: Message,
+                    avatar: "<%- user.avatar %>",
+                });
+        }
+    }
+
+    firebase
+        .database()
+        .ref("messages")
+        .on("child_added", function (snapshot) {
+            document.getElementById(
+                "list-message"
+            ).innerHTML += `<li id="message${snapshot.key}"><div><img src="${
+                snapshot.val().avatar
+            }" /><div><p class="username">${snapshot.val().sender} ${
+                `<%- user.tag %>` === `${snapshot.val().tag}`
+                    ? `<button id="button" data-id="${snapshot.key}" onclick="deletarMensagem(this)" style="cursor: pointer; background: none; margin-left: 0.5rem; border: none;">🗑️</button>`
+                    : ""
+            }</p><p class="content">${
+                snapshot.val().message
+            }</p></div></div></li>`;
+        });
+
+    firebase
+        .database()
+        .ref("users")
+        .on("child_added", function (snapshot) {
+            document.getElementById(
+                "list-users"
+            ).innerHTML += `<div class="user">
+                <img src="${snapshot.val().avatar}" />
+                <p>${snapshot.val().username}</p>
+            </div>`;
+        });
+
+    function deletarMensagem(self) {
+        var messageID = self.getAttribute("data-id");
+
+        firebase.database().ref("messages").child(messageID).set({});
+    }
+
+    firebase
+        .database()
+        .ref("messages")
+        .on("child_removed", function (snapshot) {
+            document.getElementById(`message${snapshot.key}`).innerHTML = ``;
+        });
+</script>
+<%- include('./partials/footer') %>

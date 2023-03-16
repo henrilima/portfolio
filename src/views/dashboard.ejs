@@ -1,0 +1,82 @@
+<%- include('./partials/header') %>
+<link rel="stylesheet" href="dashboard.css" />
+<%- include('./partials/closeheader') %>
+
+<main class="menu">
+    <h2>Projetos e Salas</h2>
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <a href="/dashboard/ct">
+                <div class="carousel-item">
+                    <div class="image">
+                        <img src="/icons/chameleon.png" alt="icon" draggable="false" />
+                    </div>
+                    <div class="nav-el">
+                        <p>Chromac Comunity</p>
+                    </div>
+                </div>
+            </a>
+            <a href="/dashboard/calc">
+                <div class="carousel-item">
+                    <div class="image">
+                        <img src="/icons/calculadora.png" alt="icon" draggable="false" />
+                    </div>
+                    <div class="nav-el">
+                        <p>Calculadora</p>
+                    </div>
+                </div>
+            </a>
+            <a href="/dashboard/sld">
+                <div class="carousel-item">
+                    <div class="image">
+                        <img src="/icons/carrossel.png" alt="icon" draggable="false" />
+                    </div>
+                    <div class="nav-el">
+                        <p>Slider</p>
+                    </div>
+                </div>
+            </a>
+            <a href="/dashboard/jkp">
+                <div class="carousel-item">
+                    <div class="image">
+                        <img src="/icons/jokenpo.png" alt="icon" draggable="false" />
+                    </div>
+                    <div class="nav-el">
+                        <p>Jokenpô</p>
+                    </div>
+                </div>
+            </a>
+            <div class="carousel-item">
+                <div class="image">
+                    <img src="/assets/Chromac.png" alt="icon" draggable="false" />
+                </div>
+                <div class="nav-el">
+                    <p>Em Desenvolvimento</p>
+                </div>
+            </div>
+        </div>
+
+        <button id="prevBtn">
+            <span class="material-symbols-outlined"> arrow_circle_left </span>
+        </button>
+        <button id="nextBtn">
+            <span class="material-symbols-outlined"> arrow_circle_right </span>
+        </button>
+    </div>
+
+    <div class="action-center">
+        <img src="<%- user.avatar %>" alt="Icon" />
+        <div>
+            <h2><%- user.tag %></h2>
+            <a href="/google/logout" class="logout">Logout</a>
+            <a
+                href="https://api.whatsapp.com/send?phone=5581996421340&text=Ol%C3%A1!%20Vim%20pelo%20website%20da%20Chromac.%20:D"
+                target="_blank"
+                class="whatsapp"
+                >Whatsapp</a
+            >
+        </div>
+    </div>
+</main>
+
+<%- include('./partials/footer') %>

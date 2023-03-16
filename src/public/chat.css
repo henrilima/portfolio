@@ -1,0 +1,265 @@
+@import url(https://fonts.googleapis.com/css?family=Red+Hat+Display:300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@font-face {
+    font-family: "Uni Sans";
+    src: url("/fonts/Uni Sans Heavy.otf");
+}
+
+:root {
+    --primary: #92c990;
+    --black: #101010;
+    --warn: #d97c0f;
+    --blue: #b1c4f6;
+    --white: #d9d9d9;
+    --glass: linear-gradient(
+        45deg,
+        rgba(217, 217, 217, 0.05),
+        rgba(217, 217, 217, 0.25),
+        rgba(217, 217, 217, 0.05)
+    );
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    transition: all 0.4s;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Red Hat Display";
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    font-weight: 500 !important;
+    background-color: #292841;
+    color: #f2f2f2;
+}
+
+body,
+main {
+    overflow-x: hidden;
+}
+
+main {
+    height: calc(100% - 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    width: 100%;
+    height: 40px;
+    background-color: #57567b;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+nav h3 {
+    font-family: "Uni Sans", sans-serif;
+    margin: 0.4rem;
+}
+
+main div.messages {
+    width: 100%;
+    height: 100%;
+    background-color: #292841;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+main div.messages section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.6rem;
+}
+
+main div.messages input.box {
+    border-radius: 18px;
+    width: 75%;
+    height: 3rem;
+    background-color: #57567b;
+    border: none;
+    outline: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: #dcddde;
+}
+
+main div.messages a.send-button {
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: #57567b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+}
+
+main div.messages a.send-button:hover {
+    background-color: #92c990;
+    cursor: pointer;
+}
+
+::placeholder {
+    color: rgba(220, 221, 222, 0.6);
+}
+
+main div.users {
+    width: 400px;
+    height: 100%;
+    background-color: #1c1b29;
+    padding: 1.5rem 0 0 1.5rem;
+    overflow-y: scroll;
+}
+
+div.classe {
+    margin-bottom: 2rem;
+}
+
+div.classe.p1 {
+    color: #f1daa5;
+}
+
+div.classe.p2 {
+    color: #a0c9ef;
+}
+
+div.classe > p {
+    font-family: "Uni Sans", sans-serif;
+}
+
+div.user {
+    color: #dcddde;
+    margin-top: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+div.user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+}
+
+div.user p {
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    text-transform: capitalize;
+}
+
+div.message-boxies {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+div.warn {
+    margin-top: 2rem;
+    width: 80%;
+    height: auto;
+    padding: 1rem;
+    background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.15),
+        rgba(255, 255, 255, 0.05)
+    );
+    border-radius: 20px;
+    color: #d9d9d997;
+    display: flex;
+    flex-direction: column;
+}
+
+div.warn h3 {
+    font-family: "Uni Sans", sans-serif;
+}
+div.warn p {
+    margin-top: 0.5rem;
+}
+
+div.message-boxies ul {
+    height: calc(100% - 80px);
+    width: 100%;
+    padding: 2rem 8rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+div.message-boxies ul li {
+    margin-bottom: 1rem;
+}
+
+div.message-boxies ul li div {
+    display: flex;
+}
+
+div.message-boxies ul li div > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    border: 4px solid #92c990;
+}
+
+div.message-boxies ul li div > div {
+    color: #d9d9d9;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+div.message-boxies ul li div > div p.username {
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+div.message-boxies ul li div > div p.content {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #d9d9d9d4;
+}
+
+@media screen and (max-width: 1000px) {
+    nav h3 {
+        font-size: 0.8rem;
+    }
+
+    main div.users {
+        display: none;
+    }
+
+    div.message-boxies ul {
+        padding: 2rem;
+    }
+
+    main div.messages input.box {
+        font-size: 0.8rem;
+    }
+
+    main div.messages a.send-button {
+        font-size: 1rem;
+    }
+}

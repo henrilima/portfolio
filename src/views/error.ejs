@@ -1,0 +1,30 @@
+<%- include('./partials/header') %>
+<link rel="stylesheet" href="/style.css" />
+<link rel="stylesheet" href="/header.css" />
+<style>
+    main.error {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    main.error div {
+        margin: 0.5rem 1rem;
+    }
+
+    main.error h3 {
+        font-family: "Uni Sans", sans-serif;
+    }
+</style>
+<%- include('./partials/closeheader') %> <%- include('./partials/navbar') %>
+
+<main class="error">
+    <div>
+        <h3>Ops, parece que tivemos um probleminha...</h3>
+    <p>Volte para a página inicial e comunique ao desenvolvedor.</p>
+    </div>
+</main>
+
+<%- include('./partials/footer') %>

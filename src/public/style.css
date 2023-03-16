@@ -1,0 +1,307 @@
+@import url(./header.css);
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    padding: 2rem 0;
+    background-color: transparent;
+    position: absolute;
+}
+
+nav a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+nav ul li:nth-of-type(1) a {
+    color: #46957a;
+}
+nav ul li:nth-of-type(2) a {
+    color: #6ab585;
+}
+nav ul li:nth-of-type(3) a {
+    color: #8ec78e;
+}
+
+nav a.title {
+    font-size: 2rem;
+    font-weight: 900;
+    font-family: "Uni Sans";
+    background: linear-gradient(to right, #46957a, #6ab585, #8ec78e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+a.login-button button {
+    background-color: var(--primary);
+    color: #303030;
+    border-radius: 200px;
+
+    padding: 0.3rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+}
+
+main {
+    width: 100%;
+    height: 95vh;
+    background-color: #303030;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f2f2f2;
+}
+
+main div h1,
+section.sct01 div h2,
+section.sct02 div h2,
+section.sct03 h2 {
+    font-family: "Uni Sans", sans-serif;
+    font-size: 4rem;
+}
+
+main div p {
+    font-size: 1.2rem;
+    font-weight: 400 !important;
+}
+
+main div {
+    margin: 4rem 2rem 0 2rem;
+    text-align: center;
+    max-width: 800px;
+}
+
+main div > div {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+main div div a {
+    margin: 0.5rem 0;
+}
+
+main div > div a button {
+    color: #303030;
+    border-radius: 200px;
+    
+    padding: 0.7rem 2.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer !important;
+}
+
+main div > div a:nth-of-type(1) button {
+    background-color: #d9d9d9;
+}
+main div > div a:nth-of-type(2) button {
+    background-color: var(--primary);
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+section.sct01,
+section.sct03 {
+    background-color: #f2f2f2;
+    height: 100vh;
+}
+
+section.sct03 {
+    flex-direction: column;
+}
+
+section.sct01 div {
+    max-width: 400px;
+}
+section.sct01 div h2 {
+    font-size: 3.5rem;
+}
+section.sct01 div p {
+    max-width: 380px;
+}
+
+.logo {
+    max-width: 500px;
+}
+
+section.sct02 {
+    background-color: #d9d9d9;
+    height: 100vh;
+}
+
+section.sct02 div {
+    max-width: 400px;
+}
+section.sct02 div h2 {
+    font-size: 3.5rem;
+}
+section.sct03 h2 {
+    text-align: center;
+}
+section.sct02 div p {
+    max-width: 380px;
+}
+
+.message-c {
+    max-width: 300px;
+}
+
+.chat-c {
+    max-width: 40%;
+}
+
+footer {
+    width: 100%;
+    margin-top: 6rem;
+    background-color: #1c1b29;
+    padding: 6rem 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    color: var(--white);
+}
+
+footer hr {
+    margin: 4rem 0;
+    width: 90%;
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 2px;
+    border-image-source: linear-gradient(to right, #46957a, #6ab585, #8ec78e);
+}
+
+footer h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-family: "Uni Sans", sans-serif;
+    margin: 0 1rem;
+}
+
+footer span {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer span a {
+    width: auto;
+    margin: 0 1rem;
+    font-size: 1.1rem;
+    font-weight: 900;
+}
+
+footer span a:nth-of-type(1) {
+    color: #46957a;
+}
+footer span a:nth-of-type(2) {
+    color: #6ab585;
+}
+footer span a:nth-of-type(3) {
+    color: #8ec78e;
+}
+
+@media screen and (max-width: 800px) {
+    nav ul {
+        display: none;
+    }
+
+    main div h1 {
+        font-size: 3.5rem;
+    }
+
+    main div p {
+        font-size: 1.1rem;
+    }
+
+    main div > div {
+        flex-direction: column;
+    }
+
+    section.sct01,
+    section.sct02,
+    section.sct03 {
+        flex-direction: column;
+    }
+
+    section.sct03 {
+        justify-content: center;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    section.sct01 div,
+    section.sct02 div,
+    section.sct03 h2 {
+        margin: 0 2rem !important;
+    }
+
+    section.sct01 div h2,
+    section.sct02 div h2,
+    section.sct03 h2 {
+        font-size: 2.5rem;
+        text-align: left;
+    }
+
+    section.sct03 h2 {
+        margin-bottom: 4rem !important;
+    }
+
+    section.sct01 div p,
+    section.sct02 div p {
+        margin-top: 0.4rem;
+    }
+
+    .message-c {
+        max-width: 250px;
+    }
+
+    .chat-c {
+        max-width: 80%;
+    }
+
+    footer {
+        margin-top: 0;
+    }
+
+    footer span {
+        flex-direction: column;
+    }
+    footer span a {
+        margin: 0.3rem 0rem;
+    }
+}
