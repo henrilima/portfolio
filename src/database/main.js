@@ -10,8 +10,15 @@ const firebaseConfig = {
   appId: "1:979803307535:web:a0484cd2778fe01c9eed7a"
 };
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+try {
+    firebase.initializeApp(firebaseConfig);
+    console.log("Conectado ao banco de dados!");
+} catch (err) {
+    console.log(err);
+}
 const database = new bancodedados(firebase, false);
 
-module.exports = database;
+module.exports = {
+    database,
+    firebase,
+};
