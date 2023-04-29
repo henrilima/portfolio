@@ -1,18 +1,33 @@
-const DiscordStrategy = require("passport-google-oauth20").Strategy;
-const passport = require("passport");
-const User = require("../models/Users");
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
+const database = require("../database/main.js");
+const passport = require("passport");;
+
+const usersRef = database.firebase.database().ref("users-sessions");
 
 passport.serializeUser((user, done) => {
-    done(null, user.id);
+    done(null, user.key);
 });
 
-passport.deserializeUser(async (id, done) => {
-    const user = await User.findById(id);
-    if (user) done(null, user);
+passport.deserializeUser((id, done) => {
+    const userRef = database.firebase.database().ref(`users-sessions/${id}`);
+    userRef.once(
+        "value",
+        (snapshot) => {
+            const user = snapshot.val();
+            if (user) {
+                done(null, user);
+            } else {
+                done(new Error(`User with id ${id} not found`));
+            }
+        },
+        (error) => {
+            done(error);
+        }
+    );
 });
 
 passport.use(
-    new DiscordStrategy(
+    new GoogleStrategy(
         {
             clientID: process.env.GOOGLEID,
             clientSecret: process.env.GOOGLESECRET,
@@ -21,28 +36,35 @@ passport.use(
         },
         async (acessToken, refreshToken, profile, done) => {
             try {
-                console.log(profile)
-                const user = await User.findOne({ googleId: profile.id });
-                if (user) {
-                    await user.updateOne({
-                        avatar: profile._json.picture,
-                        username: profile._json.given_name,
-                        name: profile._json.name,
-                        tag: `${profile._json.given_name}#${user.discriminator}`,
-                    });
-                    done(null, user);
+                const usersSnapshot = await usersRef
+                    .orderByChild("googleId")
+                    .equalTo(profile.id)
+                    .once("value");
+                const usersData = usersSnapshot.val();
+                if (usersData) {
+                    const userId = Object.keys(usersData)[0];
+                    const user = usersData[userId];
+                    user.avatar = profile._json.picture;
+                    user.username = profile._json.given_name;
+                    user.name = profile._json.name;
+                    user.tag = `${profile._json.given_name}#${profile._json.discriminator}`;
+                    await usersRef.child(userId).update(user);
+                    return done(null, user);
                 } else {
-                    var discriminator =
-                    Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
-                    const newUser = await User.create({
+                    const discriminator =
+                        Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+                    const newUser = {
                         googleId: profile.id,
                         name: profile._json.name,
                         avatar: profile._json.picture,
                         username: profile._json.given_name,
-                        tag: `${profile._json.given_name}#${profile.discriminator}`,
                         discriminator,
-                    });
-                    const saveUser = await newUser.save();
+                        tag: `${profile._json.given_name}#${discriminator}`,
+                    };
+                    const newUserRef = await usersRef.push(newUser);
+                    const newUserSnapshot = await newUserRef.once("value");
+                    const saveUser = newUserSnapshot.val();
+                    saveUser.key = newUserRef.key;
                     done(null, saveUser);
                 }
             } catch (err) {
