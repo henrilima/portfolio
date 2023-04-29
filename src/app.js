@@ -1,22 +1,17 @@
 require("dotenv").config({});
 
-const database = require("./database/firebase");
+const database = require("./database/main");
 const planets = require("./api/planets.json");
 require("./strategies/googlestrategy");
-const db = require("./database/main");
 
 const session = require("express-session");
+const bodyParser = require("body-parser");
 const passport = require("passport");
 const express = require("express");
 const path = require("path");
 
-const mongoStore = require("connect-mongo");
+const connectFirebase = require('connect-session-firebase');
 const app = express();
-
-// Database
-db.then(() => console.log("Conectado ao banco de dados!")).catch((err) =>
-    console.log(err)
-);
 
 // Port
 const port = process.env.PORT || 8080;
@@ -38,18 +33,22 @@ const authRoute = require("./routes/google");
 const creatorRoute = require("./routes/creator");
 const dashboardRoute = require("./routes/dashboard");
 
+const FirebaseStore = connectFirebase(session);
+const store = new FirebaseStore({
+    database: database.firebase.database(),
+    sessions: 'sessions'
+});
+
 app.use(
     session({
         secret: "some random secret",
         cookie: {
-            maxAge: 60000 * 60 * 24,
+            maxAge: 172800000,
         },
         saveUninitialized: false,
         resave: false,
         name: "google.oauth2",
-        store: mongoStore.create({
-            mongoUrl: process.env.MONGOURL,
-        }),
+        store: store,
     })
 );
 
