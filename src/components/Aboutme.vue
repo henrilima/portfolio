@@ -22,7 +22,7 @@
                     Criando produtos: Softwares, designs e experiências.
                 </p>
                 <div class="buttons-box">
-                    <button class="call-to-action">
+                    <button class="call-to-action" @click="downloadFile">
                         Currículo <v-icon name="ai-cv-square" />
                     </button>
                     <button class="call-to-action" disabled>
@@ -31,9 +31,7 @@
                 </div>
             </div>
             <div class="courses">
-                <p class="main-text main-text-min">
-                    Formação:
-                </p>
+                <p class="main-text main-text-min">Formação:</p>
                 <div class="box-course">
                     <v-icon name="md-school-round" scale="1.5" />
                     <div class="course-info">
@@ -41,56 +39,36 @@
                         <p>
                             Instituição: Escola Técnica Antônio Arruda de Farias
                         </p>
-                        <p>
-                            Período: 2021 - 2023
-                        </p>
+                        <p>Período: 2021 - 2023</p>
                     </div>
                 </div>
                 <div class="box-course">
                     <v-icon name="md-school-round" scale="1.5" />
                     <div class="course-info">
                         <h3>Engenharia de Software</h3>
-                        <p>
-                            Instituição: Universidade Estácio de Sã
-                        </p>
-                        <p>
-                            Período: 2024 - Atual
-                        </p>
+                        <p>Instituição: Universidade Estácio de Sã</p>
+                        <p>Período: 2024 - Atual</p>
                     </div>
                 </div>
             </div>
             <div class="courses">
-                <p class="main-text main-text-min">
-                    Certificações:
-                </p>
+                <p class="main-text main-text-min">Certificações:</p>
                 <div class="box-course">
                     <v-icon name="la-certificate-solid" scale="1.5" />
                     <div class="course-info">
                         <h3>Curso de Informática</h3>
-                        <p>
-                            Local de ensino: INSC
-                        </p>
-                        <p>
-                            Professora: Tarciana Silva
-                        </p>
-                        <p>
-                            Período: 2016
-                        </p>
+                        <p>Local de ensino: INSC</p>
+                        <p>Professora: Tarciana Silva</p>
+                        <p>Período: 2016</p>
                     </div>
                 </div>
                 <div class="box-course">
                     <v-icon name="la-certificate-solid" scale="1.5" />
                     <div class="course-info">
                         <h3>Curso de Desenvolvimento Web Completo</h3>
-                        <p>
-                            Instituição: Udemy Academy
-                        </p>
-                        <p>
-                            Professor: Leonardo Moura Leitão
-                        </p>
-                        <p>
-                            Período: 2021
-                        </p>
+                        <p>Instituição: Udemy Academy</p>
+                        <p>Professor: Leonardo Moura Leitão</p>
+                        <p>Período: 2021</p>
                     </div>
                 </div>
             </div>
@@ -107,6 +85,16 @@ export default {
         return {
             photo,
         };
+    },
+    methods: {
+        downloadFile() {
+            const link = document.createElement("a");
+            link.href = "/docs/cv.pdf";
+            link.download = "cv.pdf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        },
     },
 };
 </script>

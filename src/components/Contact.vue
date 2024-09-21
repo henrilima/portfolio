@@ -55,7 +55,7 @@
 
 <script>
 import emailjs from "emailjs-com";
-import image from "@/assets/images/gmail.svg";
+import image from "@/assets/images/henri-ilu.svg";
 
 export default {
     name: "ContactComponent",
