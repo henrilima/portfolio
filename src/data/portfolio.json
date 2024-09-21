@@ -25,13 +25,13 @@
                 "id": "github",
                 "text": "Github",
                 "emoji": "fa-github-alt",
-                "link": "https://github.com/henrilima/autoclick"
+                "link": "https://github.com/henrilima/portfolio"
             },
             {
                 "id": "acessar",
                 "text": "Acessar",
                 "emoji": "bi-box-arrow-in-up-right",
-                "link": "https://github.com/henrilima/autoclick/releases",
+                "link": "https://github.com/henrilima/",
                 "disabled": true
             }
         ]
