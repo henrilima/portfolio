@@ -1,0 +1,111 @@
+[
+    {
+        "title": "Portfólio",
+        "emoji": "bi-person-circle",
+        "description": "Este mesmo portfólio em que você está.",
+        "tags": [
+            {
+                "id": "vue",
+                "name": "Vue.JS",
+                "color": "black"
+            },
+            {
+                "id": "node",
+                "name": "Node.JS",
+                "color": "white"
+            },
+            {
+                "id": "web",
+                "name": "Aplicação Web",
+                "color": "white"
+            }
+        ],
+        "butons": [
+            {
+                "id": "github",
+                "text": "Github",
+                "emoji": "fa-github-alt",
+                "link": "https://github.com/henrilima/autoclick"
+            },
+            {
+                "id": "acessar",
+                "text": "Acessar",
+                "emoji": "bi-box-arrow-in-up-right",
+                "link": "https://github.com/henrilima/autoclick/releases",
+                "disabled": true
+            }
+        ]
+    },
+    {
+        "title": "AutoClicker",
+        "emoji": "gi-click",
+        "description": "Um script de autoclick para automatizar cliques onde o ponteiro do mouse está. Ideal para tarefas repetitivas que exigem cliques frequentes.",
+        "tags": [
+            {
+                "id": "python",
+                "name": "Python",
+                "color": "white"
+            },
+            {
+                "id": "executavel",
+                "name": "Executável",
+                "color": "white"
+            },
+            {
+                "id": "windows",
+                "name": "Windows",
+                "color": "white"
+            }
+        ],
+        "butons": [
+            {
+                "id": "github",
+                "text": "Github",
+                "emoji": "fa-github-alt",
+                "link": "https://github.com/henrilima/autoclick"
+            },
+            {
+                "id": "download",
+                "text": "Download",
+                "emoji": "fa-cloud-download-alt",
+                "link": "https://github.com/henrilima/autoclick/releases"
+            }
+        ]
+    },
+    {
+        "title": "Pokédex",
+        "emoji": "md-catchingpokemon-twotone",
+        "description": "O Pokédex é um software para buscar informações detalhadas sobre os Pokémons. O aplicativo exibe dados oficiais.",
+        "tags": [
+            {
+                "id": "python",
+                "name": "Python",
+                "color": "white"
+            },
+            {
+                "id": "executavel",
+                "name": "Executável",
+                "color": "white"
+            },
+            {
+                "id": "windows",
+                "name": "Windows",
+                "color": "white"
+            }
+        ],
+        "butons": [
+            {
+                "id": "github",
+                "text": "Github",
+                "emoji": "fa-github-alt",
+                "link": "https://github.com/henrilima/pokedex"
+            },
+            {
+                "id": "download",
+                "text": "Download",
+                "emoji": "fa-cloud-download-alt",
+                "link": "https://github.com/henrilima/pokedex/releases"
+            }
+        ]
+    }
+]
