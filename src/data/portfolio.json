@@ -26,13 +26,53 @@
                 "text": "Github",
                 "emoji": "fa-github-alt",
                 "link": "https://github.com/henrilima/portfolio"
+            }
+        ]
+    },
+    {
+        "title": "topSongs",
+        "emoji": "fa-music",
+        "description": "Uma aplicação que permite classificar suas 5 músicas favoritas de qualquer artista.",
+        "tags": [
+            {
+                "id": "vue",
+                "name": "Vue.JS",
+                "color": "black"
+            },
+            {
+                "id": "node",
+                "name": "Node.JS",
+                "color": "white"
+            },
+            {
+                "id": "api",
+                "name": "API",
+                "color": "white"
+            },
+            {
+                "id": "web",
+                "name": "Aplicação Web",
+                "color": "white"
+            }
+        ],
+        "butons": [
+            {
+                "id": "github",
+                "text": "Github",
+                "emoji": "fa-github-alt",
+                "link": "https://github.com/henrilima/topsongs"
             },
             {
                 "id": "acessar",
                 "text": "Acessar",
-                "emoji": "bi-box-arrow-in-up-right",
-                "link": "https://github.com/henrilima/",
-                "disabled": true
+                "emoji": "hi-solid-external-link",
+                "link": "https://topsongs.vercel.app/"
+            },
+            {
+                "id": "api",
+                "text": "API",
+                "emoji": "hi-solid-external-link",
+                "link": "https://github.com/henrilima/TopSongs-API"
             }
         ]
     },
@@ -91,6 +131,11 @@
                 "id": "windows",
                 "name": "Windows",
                 "color": "white"
+            },
+            {
+                "id": "api",
+                "name": "API",
+                "color": "white"
             }
         ],
         "butons": [
@@ -105,6 +150,12 @@
                 "text": "Download",
                 "emoji": "fa-cloud-download-alt",
                 "link": "https://github.com/henrilima/pokedex/releases"
+            },
+            {
+                "id": "api",
+                "text": "API",
+                "emoji": "hi-solid-external-link",
+                "link": "https://pokeapi.co/"
             }
         ]
     }

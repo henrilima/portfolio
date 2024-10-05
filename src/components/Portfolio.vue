@@ -183,17 +183,25 @@ section.portfolio div.box p:nth-of-type(2) {
     color: var(--white);
     padding: 0.4rem;
     transition: all 0.4s ease;
+    font-weight: 700;
 }
 
 .buttons button:nth-of-type(1):hover {
-    background-color: var(--blurple);
+    background-color: var(--btn-blurple);
     cursor: pointer;
+    color: var(--black);
 }
 
 .buttons button:nth-of-type(2):hover {
-    background-color: var(--orange);
+    background-color: var(--btn-orange);
     cursor: pointer;
     color: var(--black);
+}
+
+.buttons button:nth-of-type(3):hover {
+    background-color: var(--btn-green);
+    cursor: pointer;
+    color: var(--white);
 }
 
 .buttons button:nth-of-type(2):disabled:hover {

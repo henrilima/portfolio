@@ -9,7 +9,7 @@
                 </div>
                 <div class="flex-column">
                     <p class="main-text">Criando produtos: Softwares, designs e experiências.</p>
-                    <button @click="scrollToSection('sobremim')" class="call-to-action">Veja mais <v-icon name="bi-box-arrow-in-up-right" /></button>
+                    <button @click="scrollToSection('sobremim')" class="call-to-action">Veja mais <v-icon name="hi-solid-external-link" /></button>
                 </div>
             </div>
             <Portfolio />

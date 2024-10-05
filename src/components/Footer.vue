@@ -5,10 +5,10 @@
                 <v-icon name="la-github-alt" scale="2" />
                 <span class="social-media-label">GitHub</span>
             </a>
-            <!-- <a href="https://linkedin.com/in/yourusername" target="_blank">
+            <a href="https://linkedin.com/in/josehlima" target="_blank">
                 <v-icon name="fa-linkedin" scale="2" />
                 <span class="social-media-label">LinkedIn</span>
-            </a> -->
+            </a>
         </div>
         <div class="footer-text">
             <p>&copy; 2024 Henri Silva. Todos os direitos reservados.</p>
@@ -24,7 +24,7 @@ export default {
 
 <style scoped>
 footer {
-    background-color: var(--blurple);
+    background-color: var(--btn-blurple);
     width: 100%;
     padding: 2rem;
     display: flex;
