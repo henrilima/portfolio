@@ -4,7 +4,7 @@
             <Navbar />
             <div class="main-body flex-column">
                 <div class="flex-column">
-                    <img :src="photo" :draggable="false" alt="José Henrique">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/henrilima-9a035.appspot.com/o/origin_resized.png?alt=media&token=1702c4a0-2835-41dd-a617-89085732785b" :draggable="false" alt="José Henrique">
                     <p>Olá, meu nome é <span class="emphasize">Henrique Silva</span> <v-icon name="md-wavinghand-round" class="emoji-orange" /></p>
                 </div>
                 <div class="flex-column">
@@ -30,8 +30,6 @@ import Dominio from '@/components/Knowledge';
 import Contato from '@/components/Contact';
 import Rodape from '@/components/Footer';
 
-import photo from '@/assets/images/photo.jpeg';
-
 export default {
     name: 'HomePage',
     components: {
@@ -41,11 +39,6 @@ export default {
         Dominio,
         Contato,
         Rodape,
-    },
-    data() {
-        return {
-            photo
-        };
     },
     methods: {
         scrollToSection(sectionId = null) {

@@ -1,7 +1,7 @@
 <template>
     <section class="aboutme" id="sobremim">
         <div class="flex-column hl">
-            <img :src="photo" alt="José Henrique" :draggable="false" />
+            <img src="https://firebasestorage.googleapis.com/v0/b/henrilima-9a035.appspot.com/o/origin_resized.png?alt=media&token=1702c4a0-2835-41dd-a617-89085732785b" alt="José Henrique" :draggable="false" />
             <h2>José Henrique</h2>
             <p>
                 Sou técnico em Desenvolvimento de Sistemas e atualmente estou
@@ -77,15 +77,8 @@
 </template>
 
 <script>
-import photo from "@/assets/images/photo.jpeg";
-
 export default {
     name: "AboutmeComponent",
-    data() {
-        return {
-            photo,
-        };
-    },
     methods: {
         downloadFile() {
             const link = document.createElement("a");
