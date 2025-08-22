@@ -12,6 +12,34 @@
   color: var(--secondary);
 }
 
+._button {
+  border-radius: 6px;
+  padding: 0.4rem 1rem;
+  color: var(--color-alt);
+  border: 1px solid var(--button-border);
+  background-color: var(--button-bg);
+  transition: all 0.4s ease;
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  &._primary {
+    color: var(--background);
+    border: 1px solid var(--button-border);
+    background-color: var(--primary);
+
+    &:hover {
+      color: var(--background) !important;
+      background-color: var(--secondary);
+    }
+  }
+
+  &:hover {
+    color: var(--tertiary);
+    cursor: pointer;
+  }
+}
+
+
 ._badge {
   display: inline-flex;
   align-items: center;
@@ -23,6 +51,6 @@
   border-radius: 6px;
   white-space: nowrap;
   color: var(--color);
-  border: 1px solid #212025;
-  background-color: #18181a;
+  border: 1px solid var(--button-border);
+  background-color: var(--button-bg);
 }

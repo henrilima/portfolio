@@ -15,10 +15,14 @@
     <main>
       <div class="texts">
         <div class="_badge" data-aos="fade-right" data-aos-duration="800">
-          <v-icon name="bi-battery-full" scale="1" class="_icon"></v-icon><p>Desenvolvedor Web Full-Stack</p>  
+          <v-icon name="bi-globe" scale="1" class="_icon"></v-icon><p>Desenvolvedor Web Full-Stack</p>  
         </div>
         <h2 class="_title" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">Aplicações Modernas, do Front-end ao Back-end</h2>
         <p class="_p" data-aos="fade-right" data-aos-duration="800" data-aos-delay="800">Transformo conceitos em realidade digital utilizando o ecossistema JavaScript. Sou proficiente em criar experiências de usuário dinâmicas com Vue.js e em construir APIs eficientes e escaláveis com Node.js, entregando produtos completos e modernos.</p>
+        <div class="buttons">
+          <button class="_button _primary">Veja meus projetos</button>
+          <button class="_button">Me conheça</button>
+        </div>
       </div>
       <img :src="me" class="me" :draggable="false" data-aos="fade-left" data-aos-duration="800" data-aos-delay="1200">
     </main>
@@ -38,7 +42,8 @@
       </div>
     </div>
 
-    <section>
+    <section class="projects">
+      
     </section>
   </div>
 </template>

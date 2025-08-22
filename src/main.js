@@ -10,9 +10,9 @@ import "./assets/ui/_ui.scss";
 import "aos/dist/aos.css";
 
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { CoDevTo, BiBatteryFull } from "oh-vue-icons/icons";
+import { CoDevTo, BiGlobe } from "oh-vue-icons/icons";
 
-addIcons(CoDevTo, BiBatteryFull);
+addIcons(CoDevTo, BiGlobe);
 
 const app = createApp(App);
 app.use(store);
