@@ -1,0 +1,16 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.0.5/schema.json",
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": true
+	},
+	"linter": {
+		"enabled": false
+	},
+	"assist": {
+		"enabled": false
+	},
+	"files": {
+		"includes": ["./src/**/*.{vue,js,ts}"]
+	}
+}
