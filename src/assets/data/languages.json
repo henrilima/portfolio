@@ -27,19 +27,22 @@
     "displayName": "HTML",
     "color": "#e34c26",
     "type": "markup",
-    "icon": "si-html5"
+    "icon": "si-html5",
+    "used": true
   },
   "css": {
     "displayName": "CSS",
-    "color": "#1572b6",
+    "color": "#663399",
     "type": "stylesheet",
-    "icon": "si-csswizardry"
+    "icon": "si-csswizardry",
+    "used": true
   },
   "scss": {
     "displayName": "SCSS",
     "color": "#cd6799",
     "type": "stylesheet",
-    "icon": "si-sass"
+    "icon": "si-sass",
+    "used": true
   },
   "ejs": {
     "displayName": "EJS",
@@ -51,19 +54,22 @@
     "displayName": "JavaScript",
     "color": "#f7df1e",
     "type": "programming",
-    "icon": "si-javascript"
+    "icon": "si-javascript",
+    "used": true
   },
   "typescript": {
     "displayName": "TypeScript",
     "color": "#3178c6",
     "type": "programming",
-    "icon": "si-typescript"
+    "icon": "si-typescript",
+    "used": true
   },
   "nodejs": {
     "displayName": "Node.js",
     "color": "#339933",
     "type": "runtime",
-    "icon": "io-logo-nodejs"
+    "icon": "io-logo-nodejs",
+    "used": true
   },
   "react": {
     "displayName": "React",
@@ -75,25 +81,29 @@
     "displayName": "Vue",
     "color": "#42b883",
     "type": "framework",
-    "icon": "io-logo-vue"
+    "icon": "io-logo-vue",
+    "used": true
   },
   "python": {
     "displayName": "Python",
     "color": "#3776ab",
     "type": "programming",
-    "icon": "io-logo-python"
+    "icon": "io-logo-python",
+    "used": true
   },
   "dart": {
     "displayName": "Dart",
     "color": "#0175c2",
     "type": "programming",
-    "icon": "si-dart"
+    "icon": "si-dart",
+    "used": true
   },
   "flutter": {
     "displayName": "Flutter",
     "color": "#02569b",
     "type": "framework",
-    "icon": "si-flutter"
+    "icon": "si-flutter",
+    "used": true
   },
   "mysql": {
     "displayName": "MySQL",
@@ -105,7 +115,8 @@
     "displayName": "PostgreSQL",
     "color": "#336791",
     "type": "database",
-    "icon": "si-postgresql"
+    "icon": "si-postgresql",
+    "used": true
   },
   "mongodb": {
     "displayName": "MongoDB",
