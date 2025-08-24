@@ -11,6 +11,6 @@
 		"enabled": false
 	},
 	"files": {
-		"includes": ["./src/**/*.{vue,js,ts}"]
+		"includes": ["./src/**/*.{vue,js,ts,json}"]
 	}
 }

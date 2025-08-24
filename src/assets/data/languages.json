@@ -1,0 +1,116 @@
+{
+  "c": {
+    "displayName": "C",
+    "color": "#555555",
+    "type": "programming",
+    "icon": "si-c"
+  },
+  "cpp": {
+    "displayName": "C++",
+    "color": "#f34b7d",
+    "type": "programming",
+    "icon": "si-cplusplus"
+  },
+  "csharp": {
+    "displayName": "C#",
+    "color": "#178600",
+    "type": "programming",
+    "icon": "si-csharp"
+  },
+  "cmake": {
+    "displayName": "CMake",
+    "color": "#064f8c",
+    "type": "build-tool",
+    "icon": "si-cmake"
+  },
+  "html": {
+    "displayName": "HTML",
+    "color": "#e34c26",
+    "type": "markup",
+    "icon": "si-html5"
+  },
+  "css": {
+    "displayName": "CSS",
+    "color": "#1572b6",
+    "type": "stylesheet",
+    "icon": "si-csswizardry"
+  },
+  "scss": {
+    "displayName": "SCSS",
+    "color": "#cd6799",
+    "type": "stylesheet",
+    "icon": "si-sass"
+  },
+  "ejs": {
+    "displayName": "EJS",
+    "color": "#a91e50",
+    "type": "template",
+    "icon": "si-javascript"
+  },
+  "javascript": {
+    "displayName": "JavaScript",
+    "color": "#f7df1e",
+    "type": "programming",
+    "icon": "si-javascript"
+  },
+  "typescript": {
+    "displayName": "TypeScript",
+    "color": "#3178c6",
+    "type": "programming",
+    "icon": "si-typescript"
+  },
+  "nodejs": {
+    "displayName": "Node.js",
+    "color": "#339933",
+    "type": "runtime",
+    "icon": "io-logo-nodejs"
+  },
+  "react": {
+    "displayName": "React",
+    "color": "#61dafb",
+    "type": "framework",
+    "icon": "io-logo-react"
+  },
+  "vue": {
+    "displayName": "Vue",
+    "color": "#42b883",
+    "type": "framework",
+    "icon": "io-logo-vue"
+  },
+  "python": {
+    "displayName": "Python",
+    "color": "#3776ab",
+    "type": "programming",
+    "icon": "io-logo-python"
+  },
+  "dart": {
+    "displayName": "Dart",
+    "color": "#0175c2",
+    "type": "programming",
+    "icon": "si-dart"
+  },
+  "flutter": {
+    "displayName": "Flutter",
+    "color": "#02569b",
+    "type": "framework",
+    "icon": "si-flutter"
+  },
+  "mysql": {
+    "displayName": "MySQL",
+    "color": "#4479a1",
+    "type": "database",
+    "icon": "si-mysql"
+  },
+  "postgresql": {
+    "displayName": "PostgreSQL",
+    "color": "#336791",
+    "type": "database",
+    "icon": "si-postgresql"
+  },
+  "mongodb": {
+    "displayName": "MongoDB",
+    "color": "#47a248",
+    "type": "database",
+    "icon": "si-mongodb"
+  }
+}
