@@ -34,6 +34,11 @@ header {
         border-radius: 4px;
         padding: 0.4rem 0.6rem;
         transition: background 0.2s, color 0.2s;
+
+        &:hover {
+          cursor: pointer;
+          color: var(--primary);
+        }
       }
     }
   }

@@ -32,10 +32,12 @@ html {
 }
 
 body {
+  width: 100%;
   min-height: 100vh;
+
   position: relative;
-  color: var(--color);
   overflow-x: hidden;
+  color: var(--color);
   background-color: var(--background);
 }
 
@@ -72,6 +74,7 @@ main {
 .projects {
   min-height: 100vh;
   position: relative;
+  overflow: hidden;
 
   display: flex;
   align-items: center;
@@ -80,11 +83,83 @@ main {
 
   .cards {
     margin-top: 3rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .carrossel-left,
+  .carrossel-right {
+    position: absolute;
+    height: 100%;
+    width: 200px;
+    z-index: 3;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
-    gap: 2.5rem;
+
+    .hint {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.4rem;
+      max-width: 128px;
+      text-align: center;
+      transition: all 0.4s ease;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      .hint {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .carrossel-left {
+    top: 0;
+    left: 0;
+  }
+
+  .carrossel-right {
+    top: 0;
+    right: 0;
+  }
+
+  .projects-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+    gap: 0.5rem;
+
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.5rem;
+    background: rgba(177, 163, 190, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(57, 13, 101, 0.68);
+
+    .indicator {
+      width: 12px;
+      height: 12px;
+      background-color: var(--tertiary);
+      border-radius: 2rem;
+
+      &:nth-of-type(3) {
+        background-color: var(--primary);
+      }
+
+      &:nth-of-type(1),
+      &:nth-of-type(5) {
+        background-color: var(--secondary);
+      }
+    }
   }
 }
 
@@ -176,6 +251,8 @@ footer {
 
 .btt {
   position: fixed;
+  z-index: 8;
+
   padding: 0.5rem;
   border-radius: 2rem;
   background: rgba(144, 89, 194, 0.26);
@@ -186,4 +263,8 @@ footer {
 
   bottom: 32px;
   right: 32px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }

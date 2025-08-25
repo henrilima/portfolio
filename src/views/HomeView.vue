@@ -1,13 +1,14 @@
 <template>
   <div>
-    <div class="btt">
+    <div class="btt" @click="scrollToView('home')">
       <v-icon name="md-arrowcircleup-round" scale="1.5"></v-icon>
     </div>
+
     <div class="bg-circles">
       <div class="blur-circle primary"
         style="bottom: 100%; left: 0%; transform: translate(-50%, 50%); width: 600px; height: 600px;"></div>
       <div class="blur-circle secondary"
-        style="top: 100%; right: 0%; transform: translate(0%, -50%); width: 400px; height: 400px;"></div>
+        style="top: 100%; right: 0%; transform: translate(0%, 0%); width: 400px; height: 400px;"></div>
     </div>
 
     <header id="home">
@@ -18,7 +19,7 @@
           <li><a @click.prevent="scrollToView('home')">Início</a></li>
           <li><a @click.prevent="scrollToView('projects')">Projetos</a></li>
           <li><a @click.prevent="scrollToView('aboutme')">Sobre mim</a></li>
-          <li><a @click.prevent="scrollToView('')">Contato</a></li>
+          <li><a @click.prevent="scrollToView('contactme')">Contato</a></li>
         </ul>
       </nav>
     </header>
@@ -36,8 +37,8 @@
           dinâmicas com Vue.js e em construir APIs eficientes e escaláveis com Node.js, entregando produtos completos e
           modernos.</p>
         <div class="buttons">
-          <button class="_button _primary">Veja meus projetos</button>
-          <button class="_button">Me conheça</button>
+          <button class="_button _primary" @click.prevent="scrollToView('projects')">Veja meus projetos</button>
+          <button class="_button" @click.prevent="scrollToView('aboutme')">Me conheça</button>
         </div>
       </div>
       <img :src="me" class="img-me" :draggable="false" data-aos="fade-left" data-aos-duration="800"
@@ -73,6 +74,12 @@
 
     <section class="projects" id="projects">
       <h2 class="_title">Conheça Meus Principais Projetos</h2>
+      <div class="carrossel-left" @click="previousItem()">
+        <div class="hint">
+          <v-icon name="gi-click" scale="2"></v-icon>
+          <p class="_p">Clique para voltar</p>
+        </div>
+      </div>
       <div class="cards" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">
         <div v-for="p in projects" :key="p.name" class="_card card-animation"
           :class="{ scale: p?.main === true, hasImage: p?.image !== undefined }">
@@ -93,6 +100,15 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="carrossel-right" @click="nextItem()">
+        <div class="hint">
+          <v-icon name="gi-click" scale="2"></v-icon>
+          <p class="_p">Clique para avançar</p>
+        </div>
+      </div>
+      <div class="projects-indicator">
+        <div v-for="(i, index) in projects" class="indicator"></div>
       </div>
     </section>
 
@@ -125,7 +141,7 @@
             <div class="stat-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
               <span class="stat-value">+16</span>
               <span class="stat-label">Projetos</span>
-              <button class="_button stat-button">
+              <button class="_button stat-button" @click="openLink(links.github)">
                 <v-icon name="fa-github-alt" scale="0.8" class="_icon"></v-icon>
                 <p>Github</p>
               </button>
@@ -155,7 +171,7 @@
       </div>
     </div>
 
-    <section class="contactme">
+    <section class="contactme" id="contactme">
       <div class="contact">
         <div>
           <h2 class="_title" data-aos="fade-up" data-aos-duration="800">Vamos Conversar!</h2>
@@ -175,7 +191,7 @@
             <p class="_p">
               Conecte-se comigo para acompanhar novidades, compartilhar experiências e expandir sua rede profissional.
             </p>
-            <button class="_button hasIcon">
+            <button class="_button hasIcon" @click="openLink(links.linkedin)">
               <v-icon name="si-linkedin" scale="1" class="_icon"></v-icon>
               <p>Me siga no LinkedIn</p>
             </button>
@@ -186,7 +202,7 @@
             <p class="_p">
               Confira meus repositórios, contribuições e projetos open source no Github.
             </p>
-            <button class="_button hasIcon">
+            <button class="_button hasIcon" @click="openLink(links.github)">
               <v-icon name="fa-github-alt" scale="1" class="_icon"></v-icon>
               <p>Ver meu Github</p>
             </button>
@@ -197,7 +213,7 @@
             <p class="_p">
               Siga-me no Instagram.
             </p>
-            <button class="_button hasIcon">
+            <button class="_button hasIcon" @click="openLink(links.instagram)">
               <v-icon name="bi-instagram" scale="1" class="_icon"></v-icon>
               <p>Me siga no Instagram</p>
             </button>
@@ -215,25 +231,61 @@
 
 <script setup>
 import me from "@/assets/image/me.png";
-import projects from "@/assets/data/projects.json";
+import projectsData from "@/assets/data/projects.json";
 import languages from "@/assets/data/languages.json";
+import { ref } from "vue";
+
+const links = {
+  github: 'https://github.com/henrilima',
+  linkedin: 'https://www.linkedin.com/in/josehlima/',
+  instagram: 'https://www.instagram.com/henrilima.llsh/'
+};
+
+const projects = ref([]);
+
+for (let p in projectsData) {
+	projects.value.push(projectsData[p]);
+}
+
+function previousItem() {
+	projects.value.unshift(projects.value[4]);
+	projects.value.pop();
+	findAndRemoveHints();
+}
+
+function nextItem() {
+	projects.value.push(projects.value[0]);
+	projects.value.shift();
+	findAndRemoveHints();
+}
 
 function getLanguageData(name) {
-  return languages[name];
+	return languages[name];
 }
 
 const usedLanguages = [];
 
 for (let i in languages) {
-  if (languages[i]?.used === true) {
-    usedLanguages.push(i);
-  }
+	if (languages[i]?.used === true) {
+		usedLanguages.push(i);
+	}
 }
 
 function scrollToView(id) {
-  console.log(id);
-  if (!id) return;
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+	if (!id) return;
+	const el = document.getElementById(id);
+	if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function findAndRemoveHints() {
+	document.querySelectorAll(".hint").forEach((el) => {
+		if (el) {
+			el.style.animation = "fade-out 1s ease forwards";
+		}
+	});
+}
+
+function openLink(url) {
+  window.open(url, "_blank", "noopener,noreferrer");
 }
 </script>

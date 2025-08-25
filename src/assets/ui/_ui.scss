@@ -202,7 +202,8 @@
     }
   }
 
-  &.scale {
+  &:nth-of-type(3) {
+    min-height: 440px;
     transform: scale(1.15);
     z-index: 1;
 
@@ -229,12 +230,12 @@
 
   &:first-child,
   &:last-child {
-    opacity: 0.4;
+    opacity: 0.25;
   }
 
   &:nth-of-type(2),
   &:nth-of-type(4) {
-    opacity: 0.8;
+    opacity: 0.55;
   }
 
   &:nth-of-type(3) {
@@ -389,5 +390,16 @@
 
   to {
     opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    display: none;
   }
 }

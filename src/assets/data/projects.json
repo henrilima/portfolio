@@ -28,7 +28,6 @@
     ]
   },
   "2": {
-    "main": true,
     "name": "topsongs",
     "displayName": "TopSongs",
     "icon": "bi-music-note-list",
