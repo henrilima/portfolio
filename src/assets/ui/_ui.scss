@@ -30,6 +30,15 @@
   font-size: 0.9rem;
   font-weight: 600;
 
+  &:is(.hasIcon) {
+    margin-top: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
   &._primary {
     color: var(--background);
     border: 1px solid var(--button-border);

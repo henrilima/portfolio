@@ -129,31 +129,61 @@ main {
   .contact {
     width: 90%;
     height: 80%;
-    padding: 2rem;
-    border-radius: 1rem;
-    background: rgba(57, 13, 101, 0.26);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(57, 13, 101, 0.68);
 
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 6rem;
 
-    > div {
+    >div {
       max-width: 50%;
+
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+
+      &:last-of-type {
+        gap: 1rem;
+
+        ._social-item {
+          width: 100%;
+          padding: 1rem;
+          border-radius: 1rem;
+          background: rgba(57, 13, 101, 0.26);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(57, 13, 101, 0.68);
+
+          h2 {
+            margin-bottom: 0.2rem;
+          }
+        }
+      }
     }
   }
 }
 
-@keyframes autoRun {
-  from {
-    left: 100%;
-  }
+footer {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
 
-  to {
-    left: calc(var(--width) * -1);
-  }
+.btt {
+  position: fixed;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  background: rgba(144, 89, 194, 0.26);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(57, 13, 101, 0.68);
+
+  bottom: 32px;
+  right: 32px;
 }

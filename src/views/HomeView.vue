@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div class="btt">
+      <v-icon name="md-arrowcircleup-round" scale="1.5"></v-icon>
+    </div>
     <div class="bg-circles">
       <div class="blur-circle primary"
         style="bottom: 100%; left: 0%; transform: translate(-50%, 50%); width: 600px; height: 600px;"></div>
@@ -155,20 +158,58 @@
     <section class="contactme">
       <div class="contact">
         <div>
-          <h2 class="_title">Vamos Conversar!</h2>
-          <p class="_subtitle">Entre em contato para colaborações, dúvidas ou oportunidades.</p>
-          <p class="_p">
-            Caso queira conversar sobre tecnologia, projetos ou oportunidades, estou sempre aberto para novas conexões! Você pode me encontrar nas redes sociais ao lado ou enviar um e-mail diretamente para <a
-              href="mailto:henrilima.me@outlook.com" class="_link">henrilima.me@outlook.com</a>. <br><br>Fique à vontade para tirar dúvidas, propor parcerias ou apenas trocar ideias sobre desenvolvimento web e de software.<br><br>Responderei o mais rápido possível!
+          <h2 class="_title" data-aos="fade-up" data-aos-duration="800">Vamos Conversar!</h2>
+          <p class="_subtitle" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">Entre em contato para
+            colaborações, dúvidas ou oportunidades.</p>
+          <p class="_p" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+            Caso queira conversar sobre tecnologia, projetos ou oportunidades, estou sempre aberto para novas conexões!
+            Você pode me encontrar nas redes sociais ao lado ou enviar um e-mail diretamente para <a
+              href="mailto:henrilima.me@outlook.com" class="_link">henrilima.me@outlook.com</a>. <br><br>Fique à vontade
+            para tirar dúvidas, propor parcerias ou apenas trocar ideias sobre desenvolvimento web e de
+            software.<br><br>Responderei o mais rápido possível!
           </p>
         </div>
-        <div class="_cards">
-          <div class="_card">
-            <h2 class="_title"></h2>
+        <div class="_social">
+          <div class="_social-item" data-aos="fade-left" data-aos-duration="800">
+            <h2 class="_title">Linkedin</h2>
+            <p class="_p">
+              Conecte-se comigo para acompanhar novidades, compartilhar experiências e expandir sua rede profissional.
+            </p>
+            <button class="_button hasIcon">
+              <v-icon name="si-linkedin" scale="1" class="_icon"></v-icon>
+              <p>Me siga no LinkedIn</p>
+            </button>
+          </div>
+
+          <div class="_social-item" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
+            <h2 class="_title">Github</h2>
+            <p class="_p">
+              Confira meus repositórios, contribuições e projetos open source no Github.
+            </p>
+            <button class="_button hasIcon">
+              <v-icon name="fa-github-alt" scale="1" class="_icon"></v-icon>
+              <p>Ver meu Github</p>
+            </button>
+          </div>
+
+          <div class="_social-item" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
+            <h2 class="_title">Instagram</h2>
+            <p class="_p">
+              Siga-me no Instagram.
+            </p>
+            <button class="_button hasIcon">
+              <v-icon name="bi-instagram" scale="1" class="_icon"></v-icon>
+              <p>Me siga no Instagram</p>
+            </button>
           </div>
         </div>
       </div>
     </section>
+
+    <footer>
+      <p>© {{ new Date().getFullYear() }} José Henrique. Todos os direitos reservados.</p>
+      <p>Feito com 💜</p>
+    </footer>
   </div>
 </template>
 

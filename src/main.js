@@ -11,10 +11,10 @@ import "aos/dist/aos.css";
 
 import { OhVueIcon, addIcons } from "oh-vue-icons";
 import {
-	CoDevTo, BiGlobe, BiStar, BiRobot, BiMusicNoteList, BiMouse, BiBag, BiGearWideConnected, LaCertificateSolid, FaGithubAlt, SiC, SiCplusplus, SiCsharp, SiCmake, SiCsswizardry, SiSass,  SiJavascript, SiTypescript, IoLogoNodejs, IoLogoReact, IoLogoVue, IoLogoPython, SiDart, SiFlutter, SiMysql, SiPostgresql, SiMongodb, SiHtml5
+	CoDevTo, BiGlobe, BiStar, BiRobot, BiMusicNoteList, BiMouse, BiBag, BiGearWideConnected, LaCertificateSolid, FaGithubAlt, SiLinkedin, BiInstagram, MdArrowcircleupRound, SiC, SiCplusplus, SiCsharp, SiCmake, SiCsswizardry, SiSass,  SiJavascript, SiTypescript, IoLogoNodejs, IoLogoReact, IoLogoVue, IoLogoPython, SiDart, SiFlutter, SiMysql, SiPostgresql, SiMongodb, SiHtml5
 } from "oh-vue-icons/icons";
 
-addIcons(CoDevTo, BiGlobe, BiStar, BiRobot, BiMusicNoteList, BiMouse, BiBag, BiGearWideConnected, LaCertificateSolid, FaGithubAlt, SiC, SiCplusplus, SiCsharp, SiCmake, SiCsswizardry, SiSass, SiJavascript, SiTypescript, IoLogoNodejs, IoLogoReact, IoLogoVue, IoLogoPython, SiDart, SiFlutter, SiMysql, SiPostgresql, SiMongodb, SiHtml5);
+addIcons(CoDevTo, BiGlobe, BiStar, BiRobot, BiMusicNoteList, BiMouse, BiBag, BiGearWideConnected, LaCertificateSolid, FaGithubAlt, SiLinkedin, BiInstagram, MdArrowcircleupRound, SiC, SiCplusplus, SiCsharp, SiCmake, SiCsswizardry, SiSass, SiJavascript, SiTypescript, IoLogoNodejs, IoLogoReact, IoLogoVue, IoLogoPython, SiDart, SiFlutter, SiMysql, SiPostgresql, SiMongodb, SiHtml5);
 
 const app = createApp(App);
 app.use(store);
