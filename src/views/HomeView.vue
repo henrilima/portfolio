@@ -187,7 +187,7 @@
         </div>
         <div class="_social">
           <div class="_social-item" data-aos="fade-left" data-aos-duration="800">
-            <h2 class="_title">Linkedin</h2>
+            <h2 class="_title">LinkedIn</h2>
             <p class="_p">
               Conecte-se comigo para acompanhar novidades, compartilhar experiências e expandir sua rede profissional.
             </p>
@@ -244,45 +244,45 @@ const links = {
 const projects = ref([]);
 
 for (let p in projectsData) {
-	projects.value.push(projectsData[p]);
+  projects.value.push(projectsData[p]);
 }
 
 function previousItem() {
-	projects.value.unshift(projects.value[4]);
-	projects.value.pop();
-	findAndRemoveHints();
+  projects.value.unshift(projects.value[4]);
+  projects.value.pop();
+  findAndRemoveHints();
 }
 
 function nextItem() {
-	projects.value.push(projects.value[0]);
-	projects.value.shift();
-	findAndRemoveHints();
+  projects.value.push(projects.value[0]);
+  projects.value.shift();
+  findAndRemoveHints();
 }
 
 function getLanguageData(name) {
-	return languages[name];
+  return languages[name];
 }
 
 const usedLanguages = [];
 
 for (let i in languages) {
-	if (languages[i]?.used === true) {
-		usedLanguages.push(i);
-	}
+  if (languages[i]?.used === true) {
+    usedLanguages.push(i);
+  }
 }
 
 function scrollToView(id) {
-	if (!id) return;
-	const el = document.getElementById(id);
-	if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  if (!id) return;
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function findAndRemoveHints() {
-	document.querySelectorAll(".hint").forEach((el) => {
-		if (el) {
-			el.style.animation = "fade-out 1s ease forwards";
-		}
-	});
+  document.querySelectorAll(".hint").forEach((el) => {
+    if (el) {
+      el.style.animation = "fade-out 1s ease forwards";
+    }
+  });
 }
 
 function openLink(url) {
