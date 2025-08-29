@@ -4,12 +4,20 @@
     <p class="_subtitle">
       Confira abaixo os certificados que comprovam minha qualificação e experiência. Clique na imagem para visualizá-la em tela cheia.
     </p>
-    <button class="_button _primary" @click="toggleCertificatesComponent()">Voltar ao início</button>
+    <button class="_button _primary" @click="toggleCertificatesComponent">Voltar ao início</button>
     <hr class="_hr">
     <div class="certificates_cards">
-      <div class="certificates_card" v-for="(certificate, index) in certificates" :key="index">
+      <div
+        class="certificates_card"
+        v-for="(certificate, index) in certificates"
+        :key="index"
+      >
         <viewer :options="viewerOptions">
-          <img :key="index" :src="certificate.img" :alt="certificate.title" class="certificate">
+          <img
+            :src="certificate.img"
+            :alt="certificate.title"
+            class="certificate"
+          />
         </viewer>
         <div>
           <h2 class="_title">{{ certificate.title }}</h2>
@@ -22,10 +30,6 @@
 
 <script setup>
 import store from "@/store";
-
-function toggleCertificatesComponent() {
-  store.dispatch("toggleCertificates");
-}
 
 const certificates = [
   {
@@ -67,5 +71,9 @@ const viewerOptions = {
   transition: true,
   keyboard: false,
   backdrop: true,
+};
+
+function toggleCertificatesComponent() {
+  store.dispatch("toggleCertificates");
 }
 </script>

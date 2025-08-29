@@ -1,8 +1,12 @@
+// Font imports
 @import url(https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+// Component imports
 @import "./components/header.scss";
 @import "./components/certificates.scss";
 
+// Base styles
 * {
   font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
@@ -20,19 +24,23 @@
   --secondary-rgb: 167, 139, 250;
   --tertiary: #c4b5fd;
   --tertiary-rgb: 196, 181, 253;
-
   --button-bg: #18181a;
   --button-border: #212025;
-
   --oswald: "Oswald", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --montserrat: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden !important;
 }
 
-html, body {
+body {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  color: var(--color);
+  background-color: var(--background);
   overflow-x: hidden !important;
 }
 
@@ -42,20 +50,11 @@ body.no-scroll {
   height: 100%;
 }
 
-body {
-  width: 100%;
-  min-height: 100vh;
-
-  position: relative;
-  color: var(--color);
-  background-color: var(--background);
-}
-
+// Main section
 main {
   width: 100%;
   height: 80dvh;
   position: relative;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,11 +80,11 @@ main {
   }
 }
 
+// Projects section
 .projects {
   min-height: 100vh;
   position: relative;
   overflow: hidden;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,7 +104,6 @@ main {
     height: 100%;
     width: 200px;
     z-index: 3;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,22 +121,14 @@ main {
 
     &:hover {
       cursor: pointer;
-
       .hint {
         transform: scale(1.1);
       }
     }
   }
 
-  .carrossel-left {
-    top: 0;
-    left: 0;
-  }
-
-  .carrossel-right {
-    top: 0;
-    right: 0;
-  }
+  .carrossel-left { top: 0; left: 0; }
+  .carrossel-right { top: 0; right: 0; }
 
   .projects-indicator {
     display: flex;
@@ -146,7 +136,6 @@ main {
     justify-content: center;
     margin-top: 4rem;
     gap: 0.5rem;
-
     padding: 0.2rem 0.4rem;
     border-radius: 0.5rem;
     background: rgba(177, 163, 190, 0.1);
@@ -161,22 +150,17 @@ main {
       background-color: var(--tertiary);
       border-radius: 2rem;
 
-      &:nth-of-type(3) {
-        background-color: var(--primary);
-      }
-
+      &:nth-of-type(3) { background-color: var(--primary); }
       &:nth-of-type(1),
-      &:nth-of-type(5) {
-        background-color: var(--secondary);
-      }
+      &:nth-of-type(5) { background-color: var(--secondary); }
     }
   }
 }
 
+// About me section
 .aboutme {
   min-height: 86vh;
   position: relative;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -200,11 +184,11 @@ main {
   }
 }
 
+// Contact section
 .contactme {
   width: 100%;
   min-height: 100vh;
   position: relative;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -213,7 +197,6 @@ main {
   .contact {
     width: 90%;
     height: 80%;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -221,7 +204,6 @@ main {
 
     >div {
       max-width: 50%;
-
       display: flex;
       align-items: flex-start;
       justify-content: center;
@@ -240,15 +222,14 @@ main {
           -webkit-backdrop-filter: blur(20px);
           border: 1px solid rgba(57, 13, 101, 0.68);
 
-          h2 {
-            margin-bottom: 0.2rem;
-          }
+          h2 { margin-bottom: 0.2rem; }
         }
       }
     }
   }
 }
 
+// Footer
 footer {
   padding: 2rem;
   display: flex;
@@ -258,10 +239,10 @@ footer {
   text-align: center;
 }
 
+// Back to top button
 .btt {
   position: fixed;
   z-index: 8;
-
   padding: 0.5rem;
   border-radius: 2rem;
   background: rgba(144, 89, 194, 0.26);
@@ -269,91 +250,51 @@ footer {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(57, 13, 101, 0.68);
-
   bottom: 32px;
   right: 32px;
 
-  &:hover {
-    cursor: pointer;
-  }
+  &:hover { cursor: pointer; }
 }
+
+// Responsive styles
 @media (max-width: 1200px) {
   main {
     gap: 4rem;
-
-    .img-me {
-      height: 400px !important;
-    }
-    .texts {
-      max-width: 400px;
-      width: 100%;
-    }
+    .img-me { height: 400px !important; }
+    .texts { max-width: 400px; width: 100%; }
   }
   .aboutme .about {
     gap: 3rem;
-    .img-me-circle {
-      width: 240px;
-      height: 240px;
-    }
-    .me {
-      max-width: 400px;
-      width: 100%;
-    }
+    .img-me-circle { width: 240px; height: 240px; }
+    .me { max-width: 400px; width: 100%; }
   }
-  .contactme .contact {
-    gap: 3rem;
-  }
+  .contactme .contact { gap: 3rem; }
 }
 
 @media (max-width: 900px) {
-  body {
-    font-size: 15px;
-  }
+  body { font-size: 15px; }
   main {
     padding: 2rem 1rem 0 1rem;
     flex-direction: column;
     gap: 2rem;
     height: auto;
-
-    .img-me {
-      height: 260px !important;
-      align-self: center;
-    }
-    .texts {
-      max-width: 100%;
-      width: 100%;
-      padding: 0 1rem;
-    }
+    .img-me { height: 260px !important; align-self: center; }
+    .texts { max-width: 100%; width: 100%; padding: 0 1rem; }
   }
   .projects {
     padding: 2rem;
-    .cards {
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
+    .cards { flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
     .carrossel-left,
-    .carrossel-right {
-      display: none !important;
-    }
-    .projects-indicator {
-      display: none;
-    }
+    .carrossel-right { display: none !important; }
+    .projects-indicator { display: none; }
   }
   .aboutme {
     padding: 1rem;
     .about {
       flex-direction: column;
       gap: 2rem;
-
-      .img-me-circle {
-        width: 160px;
-        height: 160px;
-      }
-      .me {
-        max-width: 100%;
-        width: 100%;
-      }
+      .img-me-circle { width: 160px; height: 160px; }
+      .me { max-width: 100%; width: 100%; }
     }
   }
   .contactme {
@@ -368,13 +309,6 @@ footer {
       }
     }
   }
-  footer {
-    padding: 1rem;
-    font-size: 0.9em;
-  }
-  .btt {
-    bottom: 16px;
-    right: 16px;
-    padding: 0.3rem;
-  }
+  footer { padding: 1rem; font-size: 0.9em; }
+  .btt { bottom: 16px; right: 16px; padding: 0.3rem; }
 }

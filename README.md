@@ -1,19 +1,22 @@
-# portfolio
+# Portfolio
 
-## Project setup
-```
-npm install
-```
+Este projeto é um portfólio pessoal desenvolvido para apresentar habilidades, projetos e experiências profissionais.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Funcionalidades
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- Exibição de projetos realizados
+- Informações sobre habilidades técnicas
+- Exibição de certificados de cursos realizados
+- Seção de contato
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Tecnologias Utilizadas
+
+- Vue 3
+- SCSS
+- JavaScript
+
+## Contribuição
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
+
+## Licença
+Este projeto está sob a licença [MIT](LICENSE).

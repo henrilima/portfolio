@@ -1,24 +1,25 @@
 <template>
   <div>
-    <CertificatesComponent v-if="certificates"></CertificatesComponent>
+    <!-- Certificates Modal -->
+    <CertificatesComponent v-if="certificates" />
 
     <!-- Back to Top Button -->
     <div class="btt" @click="scrollToView('home')">
-      <v-icon name="md-arrowcircleup-round" scale="1.5"></v-icon>
+      <v-icon name="md-arrowcircleup-round" scale="1.5" />
     </div>
 
     <!-- Background Circles -->
     <div class="bg-circles">
       <div class="blur-circle primary"
-        style="bottom: 100%; left: 0%; transform: translate(-50%, 50%); width: 600px; height: 600px;"></div>
+        style="bottom: 100%; left: 0%; transform: translate(-50%, 50%); width: 600px; height: 600px;" />
       <div class="blur-circle secondary"
-        style="top: 80%; right: -20%; transform: translate(0%, 0%); width: 600px; height: 600px;"></div>
+        style="top: 80%; right: -20%; transform: translate(0%, 0%); width: 600px; height: 600px;" />
     </div>
 
     <!-- Header -->
     <header id="home">
       <a>
-        <v-icon name="co-dev-to" scale="2" data-aos="fade-down" data-aos-duration="800" data-aos-delay="1600"></v-icon>
+        <v-icon name="co-dev-to" scale="2" data-aos="fade-down" data-aos-duration="800" data-aos-delay="1600" />
         Henrique Lima
       </a>
       <nav>
@@ -35,7 +36,7 @@
     <main>
       <div class="texts">
         <div class="_badge" data-aos="fade-right" data-aos-duration="800">
-          <v-icon name="bi-globe" scale="1" class="_icon"></v-icon>
+          <v-icon name="bi-globe" scale="1" class="_icon" />
           <p>Desenvolvedor Web Full-Stack</p>
         </div>
         <h2 class="_title" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
@@ -49,7 +50,7 @@
           <button class="_button" @click.prevent="scrollToView('aboutme')">Me conheça</button>
         </div>
       </div>
-      <img :src="me" class="img-me" :draggable="false" data-aos="fade-left" data-aos-duration="800" data-aos-delay="1200">
+      <img :src="me" class="img-me" :draggable="false" data-aos="fade-left" data-aos-duration="800" data-aos-delay="1200" />
     </main>
 
     <!-- Slider Section -->
@@ -67,17 +68,17 @@
     <!-- Projects Section -->
     <section class="projects" id="projects">
       <h2 class="_title">Conheça Meus Principais Projetos</h2>
-      <div class="carrossel-left" @click="previousItem()">
+      <div class="carrossel-left" @click="previousItem">
         <div class="hint">
-          <v-icon name="gi-click" scale="2"></v-icon>
+          <v-icon name="gi-click" scale="2" />
           <p class="_p">Clique para voltar</p>
         </div>
       </div>
       <div class="cards" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">
         <div v-for="p in projects" :key="p.name" class="_card card-animation"
-          :class="{ scale: p?.main === true, hasImage: p?.image !== undefined }">
-          <img v-if="p?.image" :src="require(`@/${p.image}`)" :alt="p.name">
-          <v-icon v-else :name="p.icon" scale="4"></v-icon>
+          :class="{ scale: p?.main, hasImage: !!p?.image }">
+          <img v-if="p?.image" :src="require(`@/${p.image}`)" :alt="p.name" />
+          <v-icon v-else :name="p.icon" scale="4" />
           <div class="content">
             <h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">{{ p.displayName }}</h2>
             <p class="_p" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">{{ p.description }}</p>
@@ -87,31 +88,31 @@
             </div>
             <div class="_badges" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
               <div class="_badge" v-for="l in p.technologies" :key="l">
-                <v-icon :name="getLanguageData(l).icon" scale="0.75" class="_icon"></v-icon>
+                <v-icon :name="getLanguageData(l).icon" scale="0.75" class="_icon" />
                 <p>{{ getLanguageData(l).displayName }}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="carrossel-right" @click="nextItem()">
+      <div class="carrossel-right" @click="nextItem">
         <div class="hint">
-          <v-icon name="gi-click" scale="2"></v-icon>
+          <v-icon name="gi-click" scale="2" />
           <p class="_p">Clique para avançar</p>
         </div>
       </div>
       <div class="projects-indicator">
-        <div v-for="(i, index) in projects" class="indicator"></div>
+        <div v-for="(_, index) in projects" :key="index" class="indicator"></div>
       </div>
     </section>
 
     <!-- About Me Section -->
     <section class="aboutme" id="aboutme">
       <div class="about">
-        <img :src="me_circle" class="img-me-circle" alt="Henri Lima | Image" :draggable="false" data-aos="fade-right" data-aos-duration="800">
+        <img :src="me_circle" class="img-me-circle" alt="Henri Lima | Image" :draggable="false" data-aos="fade-right" data-aos-duration="800" />
         <div class="me">
           <div class="_badge" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
-            <v-icon name="bi-gear-wide-connected" scale="1" class="_icon"></v-icon>
+            <v-icon name="bi-gear-wide-connected" scale="1" class="_icon" />
             <p>Estudante de engenharia de software</p>
           </div>
           <h2 class="_title" data-aos="fade-left" data-aos-duration="800" data-aos-delay="600">José Henrique da Silva Lima</h2>
@@ -122,8 +123,8 @@
             <div class="stat-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
               <span class="stat-value">+110h</span>
               <span class="stat-label">De aprendizado</span>
-              <button class="_button stat-button" @click="toggleCertificatesComponent()">
-                <v-icon name="la-certificate-solid" scale="0.8" class="_icon"></v-icon>
+              <button class="_button stat-button" @click="toggleCertificatesComponent">
+                <v-icon name="la-certificate-solid" scale="0.8" class="_icon" />
                 <p>Meus certificados</p>
               </button>
             </div>
@@ -131,7 +132,7 @@
               <span class="stat-value">+16</span>
               <span class="stat-label">Projetos</span>
               <button class="_button stat-button" @click="openLink(links.github)">
-                <v-icon name="fa-github-alt" scale="0.8" class="_icon"></v-icon>
+                <v-icon name="fa-github-alt" scale="0.8" class="_icon" />
                 <p>Github</p>
               </button>
             </div>
@@ -155,7 +156,7 @@
         <div v-for="(l, index) in usedLanguages" :key="l" class="item"
           :style="{ '--position': (index + 1), '--title': `'${languages[l].displayName}'` }">
           <v-icon :name="languages[l].icon" scale="2.5" class="slider-language"
-            :style="{ '--color-lang': languages[l].color }"></v-icon>
+            :style="{ '--color-lang': languages[l].color }" />
         </div>
       </div>
     </div>
@@ -185,7 +186,7 @@
               Conecte-se comigo para acompanhar novidades, compartilhar experiências e expandir sua rede profissional.
             </p>
             <button class="_button hasIcon" @click="openLink(links.linkedin)">
-              <v-icon name="si-linkedin" scale="1" class="_icon"></v-icon>
+              <v-icon name="si-linkedin" scale="1" class="_icon" />
               <p>Me siga no LinkedIn</p>
             </button>
           </div>
@@ -195,7 +196,7 @@
               Confira meus repositórios, contribuições e projetos open source no Github.
             </p>
             <button class="_button hasIcon" @click="openLink(links.github)">
-              <v-icon name="fa-github-alt" scale="1" class="_icon"></v-icon>
+              <v-icon name="fa-github-alt" scale="1" class="_icon" />
               <p>Ver meu Github</p>
             </button>
           </div>
@@ -205,7 +206,7 @@
               Siga-me no Instagram.
             </p>
             <button class="_button hasIcon" @click="openLink(links.instagram)">
-              <v-icon name="bi-instagram" scale="1" class="_icon"></v-icon>
+              <v-icon name="bi-instagram" scale="1" class="_icon" />
               <p>Me siga no Instagram</p>
             </button>
           </div>
@@ -222,71 +223,70 @@
 </template>
 
 <script setup>
+import { computed, ref } from "vue";
 import CertificatesComponent from "@/components/certificatesComponent.vue";
-
 import me from "@/assets/image/me.png";
 import me_circle from "@/assets/image/me_circle.webp";
 import projectsData from "@/assets/data/projects.json";
 import languages from "@/assets/data/languages.json";
-
-import { computed, ref } from "vue";
 import store from "@/store";
 
+// Social links
 const links = {
   github: 'https://github.com/henrilima',
   linkedin: 'https://www.linkedin.com/in/josehlima/',
   instagram: 'https://www.instagram.com/henrilima.llsh/'
 };
 
+// Projects
 const projects = ref([]);
-const certificates = computed(() => store.getters.isCertificatesVisible);
-
-for (let p in projectsData) {
+for (const p in projectsData) {
   projects.value.push(projectsData[p]);
 }
 
+// Certificates modal visibility
+const certificates = computed(() => store.getters.isCertificatesVisible);
+
+// Used languages for slider
+const usedLanguages = Object.keys(languages).filter(l => languages[l]?.used);
+
+// Helper: get language data
+function getLanguageData(name) {
+  return languages[name];
+}
+
+// Carousel navigation
 function previousItem() {
   projects.value.unshift(projects.value[4]);
   projects.value.pop();
   findAndRemoveHints();
 }
-
 function nextItem() {
   projects.value.push(projects.value[0]);
   projects.value.shift();
   findAndRemoveHints();
 }
 
-function getLanguageData(name) {
-  return languages[name];
-}
-
+// Certificates modal toggle
 function toggleCertificatesComponent() {
   store.dispatch('toggleCertificates');
 }
 
-const usedLanguages = [];
-
-for (let i in languages) {
-  if (languages[i]?.used === true) {
-    usedLanguages.push(i);
-  }
-}
-
+// Scroll to section
 function scrollToView(id) {
   if (!id) return;
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+// Animate carousel hints
 function findAndRemoveHints() {
-  document.querySelectorAll(".hint").forEach((el) => {
-    if (el) {
-      el.style.animation = "fade-out 1s ease forwards";
-    }
+  document.querySelectorAll(".hint").forEach(el => {
+    if (el) el.style.animation = "fade-out 1s ease forwards";
   });
 }
 
+// Open external link
 function openLink(url) {
   window.open(url, "_blank", "noopener,noreferrer");
 }

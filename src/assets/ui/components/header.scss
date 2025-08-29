@@ -1,15 +1,15 @@
 header {
   width: 100%;
+  padding: 1.6rem 2rem;
   background-color: rgba(0, 0, 0, 0.15);
   border-bottom: 2px solid #101010;
   backdrop-filter: blur(100px);
   -webkit-backdrop-filter: blur(100px);
-  padding: 1.6rem 2rem;
-  
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
   > a {
     font-weight: 800;
     font-size: 1.4rem;
@@ -43,6 +43,7 @@ header {
     }
   }
 }
+
 @media (max-width: 600px) {
   header {
     padding: 1rem;

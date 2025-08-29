@@ -6,9 +6,7 @@ export default createStore({
 		_scrollY: 0,
 	},
 	getters: {
-		isCertificatesVisible(state) {
-			return state.certificates;
-		},
+		isCertificatesVisible: state => state.certificates,
 	},
 	mutations: {
 		setCertificatesVisibility(state, visible) {
@@ -16,11 +14,8 @@ export default createStore({
 		},
 		toggleCertificates(state) {
 			state.certificates = !state.certificates;
-
-			console.log(state.certificates);
 			if (state.certificates) {
 				state._scrollY = window.scrollY;
-
 				document.body.classList.add("no-scroll");
 				document.documentElement.classList.add("no-scroll");
 			} else {
