@@ -16,9 +16,13 @@ import {
 
 addIcons(CoDevTo, BiGlobe, BiStar, BiRobot, BiMusicNoteList, BiMouse, BiBag, BiGearWideConnected, LaCertificateSolid, GiClick, FaGithubAlt, SiLinkedin, BiInstagram, MdArrowcircleupRound, SiC, SiCplusplus, SiCsharp, SiCmake, SiCsswizardry, SiSass, SiJavascript, SiTypescript, IoLogoNodejs, IoLogoReact, IoLogoVue, IoLogoPython, SiDart, SiFlutter, SiMysql, SiPostgresql, SiMongodb, SiHtml5);
 
+import 'viewerjs/dist/viewer.css'
+import VueViewer from 'v-viewer'
+
 const app = createApp(App);
 app.use(store);
 app.use(router);
+app.use(VueViewer);
 app.component("v-icon", OhVueIcon);
 
 app.mount("#app");

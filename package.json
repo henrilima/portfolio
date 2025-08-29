@@ -10,7 +10,10 @@
     "@biomejs/biome": "^2.2.0",
     "aos": "^2.3.4",
     "core-js": "^3.8.3",
+    "file-loader": "^6.2.0",
     "oh-vue-icons": "^1.0.0-rc3",
+    "v-viewer": "^3.0.22",
+    "viewerjs": "^1.11.7",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
