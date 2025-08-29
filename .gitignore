@@ -2,8 +2,13 @@
 node_modules
 /dist
 
+<<<<<<< HEAD
 # local env files
 .env
+=======
+
+# local env files
+>>>>>>> master
 .env.local
 .env.*.local
 
@@ -13,6 +18,11 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+<<<<<<< HEAD
+=======
+package.lock.json
+
+>>>>>>> master
 # Editor directories and files
 .idea
 .vscode
@@ -21,6 +31,7 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+<<<<<<< HEAD
 
 # Dependency directories
 jspm_packages/
@@ -66,3 +77,5 @@ yarn.lock
 
 # TernJS port file
 .tern-port
+=======
+>>>>>>> master

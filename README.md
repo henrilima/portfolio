@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Henrique Silva - Portfolio
 Técnico em Desenvolvimento de Sistemas e estudante de Engenharia de Software, tenho paixão por programação, criação de interfaces gráficas e bots para Discord.
 Acesse o portfólio em: [Portfólio](https://github.com/)
@@ -37,3 +38,27 @@ Acesse o portfólio em: [Portfólio](https://github.com/)
 - **GitHub:** [github.com/henrilima](https://github.com/henrilima)
 
 Sinta-se à vontade para explorar meus projetos e entrar em contato para colaborar!
+=======
+# Portfolio
+
+Este projeto é um portfólio pessoal desenvolvido para apresentar habilidades, projetos e experiências profissionais.
+
+## Funcionalidades
+
+- Exibição de projetos realizados
+- Informações sobre habilidades técnicas
+- Exibição de certificados de cursos realizados
+- Seção de contato
+
+## Tecnologias Utilizadas
+
+- Vue 3
+- SCSS
+- JavaScript
+
+## Contribuição
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
+
+## Licença
+Este projeto está sob a licença [MIT](LICENSE).
+>>>>>>> master
