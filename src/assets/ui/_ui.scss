@@ -95,7 +95,7 @@
   position: relative;
 
   &::before {
-    content: 'Tecnologias';
+    content: var(--title);
     position: absolute;
     font-size: 0.6rem;
     top: 0%;
@@ -115,6 +115,13 @@
   color: var(--color);
   border: 1px solid var(--button-border);
   background-color: var(--button-bg);
+
+  .tag {
+    font-size: 1.1rem;
+    color: var(--secondary);
+    text-align: center;
+    font-weight: 800;
+  }
 }
 
 // Statistics
@@ -151,22 +158,25 @@
 
 // Card
 ._card {
-  min-height: 400px;
+  flex: 0 0 290px;
+  min-height: 450px;
   max-width: 290px;
   width: 290px;
   font-weight: 600;
   font-size: 0.9rem;
   color: var(--color-alt);
   border-radius: 6px;
-  border: 1px solid var(--primary);
+  border: 2px solid var(--primary);
   background-color: var(--button-bg);
-  transition: all 0.4s ease;
   overflow: hidden;
+  transition: all 0.4s ease;
+  transform: scale(0.95);
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+
 
   &:not(.hasImage) {
     padding: 1rem;
@@ -211,37 +221,22 @@
     }
   }
 
-  &:nth-of-type(3) {
-    min-height: 440px;
-    transform: scale(1.15);
-    z-index: 1;
-    margin: 0 1rem;
-
-    & ._p {
-      font-size: 0.8rem;
-    }
-
-    & ._button {
-      font-size: 0.7rem;
-
-      &._button:not(._primary):not(._secondary):not(._tertiary) {
-        border-color: var(--primary);
-      }
-    }
-
-    & ._badges ._badge p {
-      font-size: 0.75rem;
-    }
-  }
-
-  &:first-child,
-  &:last-child {
-    opacity: 0.25;
+  &:nth-of-type(1),
+  &:nth-of-type(5) {
+    opacity: 0.1 !important;
   }
 
   &:nth-of-type(2),
   &:nth-of-type(4) {
-    opacity: 0.55;
+    opacity: 0.4 !important;
+  }
+  &:nth-of-type(2):hover,
+  &:nth-of-type(4):hover {
+    opacity: 0.8 !important;
+  }
+
+  &:nth-of-type(3) {
+    opacity: 1 !important;
   }
 }
 
@@ -256,27 +251,27 @@
 
 .blur-circle.primary {
   background-image: radial-gradient(circle,
-    var(--primary) 15%,
-    var(--tertiary) 35%,
-    var(--secondary) 55%,
-    var(--background) 70%,
-    transparent);
+      var(--primary) 15%,
+      var(--tertiary) 35%,
+      var(--secondary) 55%,
+      var(--background) 70%,
+      transparent);
 }
 
 .blur-circle.secondary {
   background-image: radial-gradient(circle,
-    var(--primary) 15%,
-    var(--secondary) 55%,
-    var(--background) 70%,
-    transparent);
+      var(--primary) 15%,
+      var(--secondary) 55%,
+      var(--background) 70%,
+      transparent);
 }
 
 .blur-circle.tertiary {
   background-image: radial-gradient(circle,
-    var(--tertiary) 15%,
-    var(--secondary) 35%,
-    var(--background) 55%,
-    transparent);
+      var(--tertiary) 15%,
+      var(--secondary) 35%,
+      var(--background) 55%,
+      transparent);
 }
 
 // Slider
@@ -290,9 +285,9 @@
 
   &.bg-color {
     background-image: linear-gradient(to right,
-      rgba(var(--primary-rgb), 0),
-      rgba(var(--primary-rgb), 0.85) 80%,
-      rgba(var(--secondary-rgb), 0.1));
+        rgba(var(--primary-rgb), 0),
+        rgba(var(--primary-rgb), 0.85) 80%,
+        rgba(var(--secondary-rgb), 0.1));
 
     .item {
       animation: autoRun 25s linear infinite;
@@ -302,9 +297,9 @@
 
   &.language-color {
     background-image: linear-gradient(to right,
-      rgba(0, 0, 0, 0.85),
-      rgba(30, 30, 30, 0.85) 40%,
-      rgba(var(--primary-rgb), 0.2));
+        rgba(0, 0, 0, 0.85),
+        rgba(30, 30, 30, 0.85) 40%,
+        rgba(var(--primary-rgb), 0.2));
 
     .item {
       position: relative;
@@ -367,23 +362,44 @@
 
 // Animations
 @keyframes autoRun {
-  from { left: 100%; }
-  to { left: calc(var(--width) * -1); }
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: calc(var(--width) * -1);
+  }
 }
 
 @keyframes reverseAutoRun {
-  from { left: calc(var(--width) * -1); }
-  to { left: 100%; }
+  from {
+    left: calc(var(--width) * -1);
+  }
+
+  to {
+    left: 100%;
+  }
 }
 
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fade-out {
-  from { opacity: 1; }
-  to { opacity: 0; display: none; }
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    display: none;
+  }
 }
 
 // Responsive
@@ -399,8 +415,13 @@
     gap: 2rem;
 
     .stat-item {
-      .stat-value { font-size: 1.6rem; }
-      .stat-label { font-size: 0.85rem; }
+      .stat-value {
+        font-size: 1.6rem;
+      }
+
+      .stat-label {
+        font-size: 0.85rem;
+      }
     }
   }
 
@@ -415,14 +436,22 @@
     padding: 6px 0.7rem 6px 4px;
   }
 
-  ._title { font-size: 1.4rem; }
-  ._subtitle { font-size: 1rem; }
+  ._title {
+    font-size: 1.4rem;
+  }
+
+  ._subtitle {
+    font-size: 1rem;
+  }
+
   ._button {
     font-size: 0.8rem;
     padding: 0.3rem 0.7rem;
   }
 
-  ._slider .list .item { font-size: 0.85rem; }
+  ._slider .list .item {
+    font-size: 0.85rem;
+  }
 }
 
 @media (max-width: 900px) {
@@ -456,6 +485,7 @@
 
       & ._button {
         font-size: inherit;
+
         &._button:not(._primary):not(._secondary):not(._tertiary) {
           border-color: var(--primary);
         }
@@ -468,8 +498,13 @@
     margin-top: 1rem;
 
     .stat-item {
-      .stat-value { font-size: 1.2rem; }
-      .stat-label { font-size: 0.75rem; }
+      .stat-value {
+        font-size: 1.2rem;
+      }
+
+      .stat-label {
+        font-size: 0.75rem;
+      }
     }
   }
 
@@ -480,7 +515,9 @@
     margin-top: 0.5rem;
     font-size: 0.7rem;
 
-    &::before { top: 10%; }
+    &::before {
+      top: 10%;
+    }
   }
 
   ._badge {
@@ -488,8 +525,14 @@
     padding: 4px 0.5rem 4px 2px;
   }
 
-  ._title { font-size: 1.4rem; }
-  ._subtitle { font-size: 1.15rem; }
+  ._title {
+    font-size: 1.4rem;
+  }
+
+  ._subtitle {
+    font-size: 1.15rem;
+  }
+
   ._button {
     font-size: 0.9rem;
     padding: 0.2rem 0.5rem;

@@ -1,77 +1,80 @@
-{
-  "0": {
-    "name": "techtaste",
-    "displayName": "Tech Taste",
-    "icon": "bi-bag",
-    "description": "App de delivery desenvolvido em Flutter, focado em interfaces intuitivas e integração de pedidos para Android e iOS.",
-    "author": "henrilima",
-    "license": "MIT",
-    "repository": "https://github.com/henrilima/techtaste",
-    "technologies": [
-      "flutter",
-      "dart"
-    ],
-    "tags": [
-      "Imersão Alura"
-    ]
-  },
-  "1": {
-    "name": "autoclick",
-    "displayName": "Auto Click",
-    "icon": "bi-mouse",
-    "description": "Ferramenta Python para automação de cliques e tarefas repetitivas, com interface gráfica personalizável.",
-    "author": "henrilima",
-    "license": "Apache-2.0",
-    "repository": "https://github.com/henrilima/autoclick",
-    "technologies": [
-      "python"
-    ]
-  },
-  "2": {
-    "name": "topsongs",
-    "displayName": "TopSongs",
-    "icon": "bi-music-note-list",
-    "image": "assets/image/projects/topsongs.png",
-    "description": "Plataforma Vue.js para rankings musicais, com interface dinâmica e recursos de compartilhamento.",
-    "author": "henrilima",
-    "license": "Apache-2.0",
-    "repository": "https://github.com/henrilima/topsongs",
-    "homepage": "https://topsongs.vercel.app/",
-    "technologies": [
-      "javascript",
-      "html",
-      "css",
-      "vue"
-    ]
-  },
-  "3": {
-    "name": "aibot",
-    "displayName": "AI Bot",
-    "icon": "bi-robot",
-    "description": "Bot para Discord com IA, usando TypeScript, Gemini API e Firebase para automação e respostas em tempo real.",
-    "author": "henrilima",
-    "license": "Apache-2.0",
-    "repository": "https://github.com/henrilima/ai-bot",
-    "technologies": [
-      "typescript",
-      "nodejs"
-    ]
-  },
-  "4": {
-    "name": "songrater",
-    "displayName": "Song Rater",
-    "icon": "bi-star",
-    "description": "Extensão Spicetify para avaliar músicas no Spotify, feita com React e TypeScript.",
-    "author": "henrilima",
-    "license": "MIT",
-    "repository": "https://github.com/henrilima/song-rater",
-    "technologies": [
-      "react",
-      "scss",
-      "typescript"
-    ],
-    "tags": [
-      "spicetify"
-    ]
+  {
+    "0": {
+      "name": "techtaste",
+      "displayName": "Tech Taste",
+      "icon": "bi-bag",
+      "description": "App de delivery desenvolvido em Flutter, focado em interfaces intuitivas e integração de pedidos para Android e iOS.",
+      "author": "henrilima",
+      "license": "MIT",
+      "repository": "https://github.com/henrilima/techtaste",
+      "technologies": [
+        "flutter",
+        "dart"
+      ],
+      "tags": [
+        "Imersão Alura"
+      ],
+      "color": "#4e5cd9"
+    },
+    "1": {
+      "name": "autoclick",
+      "displayName": "Auto Click",
+      "icon": "bi-mouse",
+      "description": "Ferramenta Python para automação de cliques e tarefas repetitivas, com interface gráfica personalizável.",
+      "author": "henrilima",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/henrilima/autoclick",
+      "technologies": [
+        "python"
+      ],
+      "color": "#8b5cf6"
+    },
+    "2": {
+      "name": "topsongs",
+      "displayName": "TopSongs",
+      "icon": "bi-music-note-list",
+      "image": "assets/image/projects/topsongs.png",
+      "description": "Plataforma Vue.js para rankings musicais, com interface dinâmica e recursos de compartilhamento.",
+      "author": "henrilima",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/henrilima/topsongs",
+      "homepage": "https://topsongs.vercel.app/",
+      "technologies": [
+        "javascript",
+        "nodejs",
+        "vue"
+      ]
+    },
+    "3": {
+      "name": "aibot",
+      "displayName": "AI Bot",
+      "icon": "bi-robot",
+      "description": "Bot para Discord com IA, usando TypeScript, Gemini API e Firebase para automação e respostas em tempo real.",
+      "author": "henrilima",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/henrilima/ai-bot",
+      "technologies": [
+        "typescript",
+        "nodejs"
+      ],
+      "color": "#4e5cd9"
+    },
+    "4": {
+      "name": "songrater",
+      "displayName": "Song Rater",
+      "icon": "bi-star",
+      "description": "Extensão Spicetify para avaliar músicas no Spotify, feita com React e TypeScript.",
+      "author": "henrilima",
+      "license": "MIT",
+      "repository": "https://github.com/henrilima/song-rater",
+      "technologies": [
+        "react",
+        "scss",
+        "typescript"
+      ],
+      "tags": [
+        "spicetify"
+      ],
+      "color": "#8b5cf6"
+    }
   }
-}

@@ -74,27 +74,48 @@
           <p class="_p">Clique para voltar</p>
         </div>
       </div>
-      <div class="cards" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">
-        <div v-for="p in projects" :key="p.name" class="_card card-animation"
-          :class="{ scale: p?.main, hasImage: !!p?.image }">
-          <img v-if="p?.image" :src="require(`@/${p.image}`)" :alt="p.name" />
-          <v-icon v-else :name="p.icon" scale="4" />
-          <div class="content">
-            <h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">{{ p.displayName }}</h2>
-            <p class="_p" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">{{ p.description }}</p>
-            <div class="buttons" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
-              <button class="_button _primary">Github</button>
-              <button v-if="p.homepage" class="_button" @click="openLink(p.homepage)">Acessar projeto</button>
-            </div>
-            <div class="_badges" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
-              <div class="_badge" v-for="l in p.technologies" :key="l">
-                <v-icon :name="getLanguageData(l).icon" scale="0.75" class="_icon" />
-                <p>{{ getLanguageData(l).displayName }}</p>
+        <div
+          class="cards"
+          data-aos="fade-down"
+          data-aos-duration="800"
+          data-aos-delay="200"
+        >
+          <div
+            v-for="p in projects"
+            :key="p.name"   
+            :style="{'border-color': p?.color }"
+            :class="{ '_card': true, hasImage: !!p?.image }"
+          >
+            <img v-if="p?.image" :src="require(`@/${p.image}`)" :alt="p.name" />
+            <v-icon v-else :name="p.icon" scale="4" :style="{'color': p?.color }" />
+            <div class="content">
+              <h2>{{ p.displayName }}</h2>
+              <p class="_p">{{ p.description }}</p>
+              <div class="buttons">
+                <button class="_button _primary">Github</button>
+                <button
+                  v-if="p.homepage"
+                  class="_button"
+                  @click="openLink(p.homepage)"
+                >
+                  Acessar projeto
+                </button>
+              </div>
+              <div class="_badges" style="--title: 'Linguagens';">
+                <div class="_badge" v-for="l in p.technologies" :key="l">
+                  <v-icon :name="getLanguageData(l).icon" scale="0.75" class="_icon" />
+                  <p>{{ getLanguageData(l).displayName }}</p>
+                </div>
+              </div>
+              <div class="_badges" v-if="p.tags" style="--title: 'Tags';">
+                <div class="_badge" v-for="t in p.tags" :key="t">
+                  <span class="tag">#</span>
+                  <p>{{ t }}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
       <div class="carrossel-right" @click="nextItem">
         <div class="hint">
           <v-icon name="gi-click" scale="2" />
@@ -102,7 +123,7 @@
         </div>
       </div>
       <div class="projects-indicator">
-        <div v-for="(_, index) in projects" :key="index" class="indicator"></div>
+        <div v-for="(_, index) in projects" :key="index" :class="{ 'indicator': true, 'active': index == indicatorIndex }"></div>
       </div>
     </section>
 
@@ -233,61 +254,66 @@ import store from "@/store";
 
 // Social links
 const links = {
-  github: 'https://github.com/henrilima',
-  linkedin: 'https://www.linkedin.com/in/josehlima/',
-  instagram: 'https://www.instagram.com/henrilima.llsh/'
+	github: "https://github.com/henrilima",
+	linkedin: "https://www.linkedin.com/in/josehlima/",
+	instagram: "https://www.instagram.com/henrilima.llsh/",
 };
 
 // Projects
+const indicatorIndex = ref(2);
 const projects = ref([]);
 for (const p in projectsData) {
-  projects.value.push(projectsData[p]);
+	projects.value.push(projectsData[p]);
 }
 
 // Certificates modal visibility
 const certificates = computed(() => store.getters.isCertificatesVisible);
 
 // Used languages for slider
-const usedLanguages = Object.keys(languages).filter(l => languages[l]?.used);
+const usedLanguages = Object.keys(languages).filter((l) => languages[l]?.used);
 
 // Helper: get language data
 function getLanguageData(name) {
-  return languages[name];
+	return languages[name];
 }
 
 // Carousel navigation
-function previousItem() {
-  projects.value.unshift(projects.value[4]);
-  projects.value.pop();
-  findAndRemoveHints();
-}
+
 function nextItem() {
-  projects.value.push(projects.value[0]);
-  projects.value.shift();
-  findAndRemoveHints();
+	projects.value.push(projects.value.shift());
+	if (indicatorIndex.value < 4) indicatorIndex.value++;
+	else indicatorIndex.value = 0;
+	findAndRemoveHints();
+}
+
+function previousItem() {
+	projects.value.unshift(projects.value.pop());
+	if (indicatorIndex.value > 0) indicatorIndex.value--;
+	else indicatorIndex.value = 4;
+	findAndRemoveHints();
 }
 
 // Certificates modal toggle
 function toggleCertificatesComponent() {
-  store.dispatch('toggleCertificates');
+	store.dispatch("toggleCertificates");
 }
 
 // Scroll to section
 function scrollToView(id) {
-  if (!id) return;
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+	if (!id) return;
+	const el = document.getElementById(id);
+	if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 // Animate carousel hints
 function findAndRemoveHints() {
-  document.querySelectorAll(".hint").forEach(el => {
-    if (el) el.style.animation = "fade-out 1s ease forwards";
-  });
+	document.querySelectorAll(".hint").forEach((el) => {
+		if (el) el.style.animation = "fade-out 1s ease forwards";
+	});
 }
 
 // Open external link
 function openLink(url) {
-  window.open(url, "_blank", "noopener,noreferrer");
+	window.open(url, "_blank", "noopener,noreferrer");
 }
 </script>
