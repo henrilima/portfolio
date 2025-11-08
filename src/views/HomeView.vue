@@ -158,7 +158,7 @@
               </button>
             </div>
             <div class="stat-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
-              <span class="stat-value">+3 anos</span>
+              <span class="stat-value">+{{ new Date().getFullYear() - 2020 }} anos</span>
               <span class="stat-label">Desenvolvendo</span>
             </div>
           </div>
