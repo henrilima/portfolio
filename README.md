@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# José Henrique | Portfólio
 
-## Getting Started
+Meu portfólio pessoal construído com Next.js, TypeScript e TailwindCSS.
 
-First, run the development server:
+## Tecnologias Utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Framework**: Next.js (App Router)
+- **Linguagem**: TypeScript
+- **Estilização**: TailwindCSS & Shadcn/ui
+- **Animações**: Motion (Framer Motion)
+- **Ícones**: Lucide React & React Icons
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Recursos do Projeto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Navegação Inteligente**: Rolagem suave programática para contornar o bloqueio de scroll dos modais.
+- **Estrutura Modular**: Seções organizadas para Apresentação, Sobre, Projetos (Carrossel), Habilidades, Certificados e Contato.
+- **Configuração Centralizada**: Arquivo de configurações (`app/social.config.ts`) para gerenciar links de redes sociais e e-mail.
+- **Mídia Dinâmica**: Favicon e Banner OpenGraph (OG) gerados via código usando a API de ImageResponse do Next.js.
+- **Otimização SEO**: Configuração automatizada de Sitemap, Robots e Metatags completas para indexação.
+- **Tratamento de Erros**: Telas de 404 (Não Encontrado) e Erro Geral integradas ao design do portfólio.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Como Rodar Localmente
 
-## Learn More
+1. Instale as dependências:
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Execute o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Compile e verifique a build de produção:
+   ```bash
+   npm run build
+   ```
